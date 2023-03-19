@@ -1,0 +1,108 @@
+<header id="full-header">
+  <!--CONTAINER-->
+  <div class="container-fluid">
+    
+    <!--ROW-->
+    <div class="d-flex flex-row justify-content-start">
+      <!--COL-->
+      <div class="logo d-flex align-items-center">
+        <a href="index.html"><img [ngClass]="{'logo-hide-img' : (screenWidth <= 767 && isShow)}"
+          src="./assets/svg/topicopolis_header_logo.svg" alt="Topicopolis"/></a>
+      </div>
+      <!--COL-->
+      
+      <!--COL-->
+      <div class="flex-grow-1">
+        <app-header-menu [isTopicClaimed]="isTopicClaimed" [searchedTopic]="searchedTopic" [tabList]=tabList (loadComponent)='getSelectedTab($event)'></app-header-menu>
+      </div>
+      <!--COL-->
+      
+      <!--SHOW COL IN MOBILE SCREEN-->
+      <div class="mob4" *ngIf="screenWidth <= 767 && !isShow">
+        <div class="search-icon">
+          <button type="submit" (click)="openSearchBox()"><img src="./assets/svg/icons8-search.svg"></button>
+        </div>
+      </div>
+      <!--SHOW COL IN WEB SCREEN-->
+      <div class="flex-shrink-1 mob3" *ngIf="(screenWidth > 767) || (screenWidth <= 767 && isShow)">
+        <div class="search-bar">
+          <app-searchbox [searchedTerm]=searchedTerm (searchedTabs)='getTabs($event)'></app-searchbox>
+        </div>
+      </div>
+      <!--COL-->
+    <!-- <app-home [searchedTopic]="searchedTopic"></app-home> -->
+    </div>
+    <!--ROW-->
+  
+  </div>
+  <!--CONTAINER-->
+
+</header>
+
+<section>
+  
+  <!--CONTAINER-->
+  <div class="container-fluid">
+    
+    <!--ROW-->
+    <div class="row">
+      
+      <!--COL-->
+      <div id="page-wrapper" [ngStyle]="{'margin-left': marginleft}">
+        <!-- MAIN CONTENT AREA TO LOAD COMPONENT -->
+        <!-- RESERVED TOPIC -->
+        <div *ngIf="loadComponent === 'reserved topic'" class="">
+          <app-reservedtopics></app-reservedtopics>
+        </div>
+        
+        <!-- HOME -->
+        <div *ngIf="loadComponent === 'home' && isTopicAvailable" class="center-sec">
+          <app-home [searchedTopic]="searchedTopic"></app-home>
+        </div>
+        
+        <!-- CLAIMED TOPIC -->
+        <div *ngIf="loadComponent === 'claim this topic'">
+          <app-claimedtopic [searchedTerm]=searchedTerm></app-claimedtopic>
+        </div>
+        
+        <!-- FINDER TOPIC -->
+        <div *ngIf="loadComponent === 'Finder'">
+          <app-findertopic [childTab]=childTab></app-findertopic>
+        </div>
+        
+        <!-- Guides -->
+        <div *ngIf="loadComponent === 'Guides'">
+          <app-guidestopic></app-guidestopic>
+        </div>
+        
+        <!-- Blog TOPIC -->
+        <div *ngIf="loadComponent === 'Blog'" class="center-sec">
+          <app-blogtopic></app-blogtopic>
+        </div>
+        
+        <!-- FAQ -->
+        <div *ngIf="loadComponent === 'FAQ'" class="center-sec">
+          <app-faq></app-faq>
+        </div>
+        
+        <!-- CALENDAR -->
+        <div *ngIf="loadComponent === 'Calendar'" class="center-sec">
+          <app-calendar></app-calendar>
+        </div>
+        
+        <!-- EVENTS -->
+        <div *ngIf="loadComponent === 'test'">
+          <app-events></app-events>
+        </div>
+      
+      
+      </div>
+      
+      <!-- SIDEBAR -->
+      <app-sidebar></app-sidebar>
+    
+    </div>
+    <!--ROW-->
+  </div>
+  <!--CONTAINER-->
+</section>

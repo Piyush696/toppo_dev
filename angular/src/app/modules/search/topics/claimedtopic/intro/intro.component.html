@@ -1,0 +1,74 @@
+<div class="container-fluid" [ngStyle]="{'height': tabHeight}">
+  <div class="row">
+    <div [ngClass]="{
+        'col-8': windowWidth > 1030,
+        'col-12':windowWidth < 1030
+      }">
+      <div class="row">
+        <p [ngStyle]="{'font-size': headingFont}">
+          Great news, the topic
+          <strong>{{searchedTerm}}</strong>
+          is available and ready for you to claim!
+        </p>
+        <p [ngStyle]="{'font-size': textFont}">
+          And the better news is that we have reserved this topic for the next two hours, which will give you more
+          than enough time to get on board.
+        </p>
+        <p [ngStyle]="{'font-size': textFont}">
+          What's this about? Click the button below, and we will show you a short video that will explain all
+          about
+          <label style="font-style: italic;">Topicopolis </label>
+
+          and what it means to "claim a topic".
+        </p>
+        <p [ngStyle]="{'font-size': textFont}">
+
+          Or, if you have been here before, you know the drill, so just enter the secret word in the text box
+          below and press the
+          <label style="font-style: italic;">Enter</label>
+
+          key.
+        </p>
+      </div>
+      <div *ngIf=switchButton class="row">
+        <div class="col-5">
+          <button [ngStyle]="{'font-size': buttonText}" class="btn btn-primary buttton-ok" (click)="onClickVideo()">
+            OK, TELL ME ABOUT IT!
+          </button>
+        </div>
+        <div class="col-xl-4 col-lg-5 col-md-7 col-sm-7">
+          <div class="input-group">
+            <input type="text" class="form-control input-box" placeholder="The secret word is... ">
+            <span class="input-group-append">
+              <button class="btn buttton-enter">Enter</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="(windowWidth > 1030)" [ngClass]="{
+        'col-4': windowWidth > '1030'
+      }">
+      <img style="width: 100%; height: auto;" src="../../../../assets/svg/hometab/mainsvg_unclaimed.png">
+
+    </div>
+
+  </div>
+
+  <div *ngIf=!switchButton class="row">
+    <div class="col-4">
+      <button [ngStyle]="{'font-size': buttonText}" class="btn btn-primary buttton-ok" (click)="onClickVideo(1)">
+        OK, TELL ME ABOUT IT!
+      </button>
+    </div>
+    <div class="col-xl-4 col-lg-5 col-md-7 col-sm-8">
+      <div class="input-group">
+        <input type="text" class="form-control input-box" placeholder="The secret word is... ">
+        <span class="input-group-append">
+          <button class="btn buttton-enter">Enter</button>
+        </span>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,112 @@
+<!--PREVIEW DIV-->
+<div class="preview">
+	<div class="preview-container">
+		<!--LOGO COL-->
+		<div class="preview-logo">
+			<a><img src="./assets/svg/topicopolis_header_logo.svg" alt="Topicopolis"/></a>
+		</div>
+		<!--LOGO COL-->
+
+		<!--TAB COL-->
+		<div class="preview-nav">
+			<nav *ngIf="tabtypes && tabtypes.length > 0">
+				<ul class="desktop-navbar d-flex flex-row justify-content-center m-0 pl-0">
+					<li *ngFor="let tab of tabtypes | filterActiveTab" (click)="selectedTab(tab)" [ngClass]="selectedTabs === tab.tabname ?'active':''">
+						<a>{{tab.tabname}}</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<!-- TAB COL-->
+
+		<!--SEARCH BOX COL-->
+		<div class="preview-searchbox">
+			<div class="top-search-input searchbox-shadow">
+				<form class="search-box-form">
+					<div class="top-search-input searchbox-shadow">
+						<button type="submit" class="custom-search"><img src="./assets/svg/icons8-search.svg" ></button>
+						<input autocomplete="off" id="searchterm" class="search-form" placeholder="Search for a Topic" />
+					</div>
+				</form>
+			</div>
+		</div>
+		<!--SEARCH BOX COL-->
+	</div>
+	<!-- PREVIEW SUB TAB -->
+	<div class="preview-sub-tab text-center">
+		<ul>
+			<li *ngFor="let subtab of currentSubTab | filterActiveTab" (click)="selectedSubTabs = subtab.tabname"	[ngClass]="selectedSubTabs === subtab.tabname ?'active':''">
+				<a>{{subtab.tabname}}</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+
+<div class="row admin_profile mb20">
+	<div class="col-sm-12">
+		<div class="admin_profile_info manage-bg">
+
+			<!-- CATEGORY & TOPIC DROPDOWN -->
+			<app-topic-finder (selectedTopic)='getTopic($event)'></app-topic-finder>
+
+			<div class="mt-4" *ngIf="selectedTopic && tabtypes">
+
+				<!-- TITLE -->
+				<div class="row">
+					<div class="col-sm-6">
+						<!-- SELECTED TOPIC TITLE -->
+						<h5>Choose tabs for your topic: {{selectedTopic.topic}}</h5>
+					</div>
+					<div class="col-sm-6">
+						<button type="submit" [ngClass]="changes.length > 0 ?'btn-danger':''"  class="btn pull-right ml-3" (click)="submitTab()" [disabled]="(error && error.length > 0) || changes.length === 0">Submit</button>
+						<div *ngIf="topic_added_successfully" class="d-inline-block pull-right alert-success">
+							{{topic_added_successfully}}
+						</div>
+						<div *ngIf="error.length > 0" class="d-inline-block pull-right alert-danger">
+							{{required_subtab_message}}
+						</div>
+					</div>
+				</div>
+
+				<!-- TREE -->
+				<div class="row">
+					<div class="col-sm-6">
+						<!-- SWITCH TREE-->
+						<ul class="pl-0">
+							<li *ngFor="let item of tabtypes; let i = index">
+								<div *ngIf="item.children.length === 0">
+									<kendo-switch [(ngModel)]="item.value" (click)="changeParent(i,item.value)"></kendo-switch>
+									{{item.tabname}}
+								</div>
+							</li>
+						</ul>
+						<!-- SWITCH TREE-->
+					</div>
+					<div class="col-sm-6">
+						<ul class="pl-0">
+							<li *ngFor="let item of tabtypes; let i = index">
+								<div *ngIf="item.children.length > 0">
+									<img *ngIf="item.children.length>0 && list.indexOf(i) === -1" src="./assets/svg/left-arrow.svg" class="arrow"
+									(click)="openTree(i)"/>
+									<img *ngIf="item.children.length>0 && list.indexOf(i) !== -1" src="./assets/svg/down-arrow.svg" class="arrow"
+									(click)="closeTree(i)"/>
+									<kendo-switch [(ngModel)]="item.value" (click)="changeParent(i,item.value)"></kendo-switch>
+									{{item.tabname}}
+									<ul *ngIf="item.children.length>0 && list.indexOf(i) !== -1">
+										<li *ngFor="let subitem of item.children; let j = index">
+											<kendo-switch [(ngModel)]="subitem.value" (click)="changeChild(j, subitem.value, i)"></kendo-switch>
+											{{subitem.tabname}}
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+

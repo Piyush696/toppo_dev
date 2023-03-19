@@ -1,0 +1,15 @@
+/* CSS FOR FINDER TOPIC COMPONENT */
+div#k-tabstrip-tabpanel-0 {min-height: 500px;}
+kendo-tabstrip p {margin: 0; padding: 8px;}
+
+/* CSS FOR KENDO TAB */
+@media only screen and (max-width:1440px){
+  .tab-pane {padding:30px; margin:30px auto;}
+}
+
+@media only screen and (max-width:767px){
+  .tab-pane {margin:30px auto; display: block;}
+}
+@media only screen and (max-width:600px){
+  .tab-pane {padding:30px 0 0;}
+}

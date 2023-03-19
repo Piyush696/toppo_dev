@@ -1,0 +1,46 @@
+<div id="manage-topic-tab-content">
+	<div class="manage-bg">
+		<app-topic-finder (selectedTopic)='getTopic($event)'></app-topic-finder>
+	</div>
+	<div class="container" *ngIf="tabtypes && tabtypes?.length > 0">
+		<div class="row">
+			<div class="col-md-12">
+				<kendo-tabstrip class="w-100 primary-tab" >
+					<kendo-tabstrip-tab *ngFor="let tab of tabtypes let tabIndex = index" [title]="tab.tabname" [selected]="tabIndex == selected">
+						<ng-template kendoTabContent>
+							<div *ngIf="tab.children.length>0">
+								<br/><br/>
+								<div class="row" *ngIf="!isEditSubTab">
+									<div class="col-sm-11">
+										<kendo-tabstrip class="secondary-tab">
+											<kendo-tabstrip-tab *ngFor="let childTab of tab.children let subTabIndex = index" [title]="childTab.tabname" [selected]="subTabIndex == selected">
+												<ng-template kendoTabContent>
+													<p>{{childTab.tabname}}</p>
+												</ng-template>
+											</kendo-tabstrip-tab>
+										</kendo-tabstrip>
+									</div>
+									<div class="col-sm-1">
+										<button type="button" class="btn btn-secondary" (click)="editSubTab(tabIndex)">
+											<i class="fa fa-edit"></i>
+										</button>
+									</div>
+								</div>
+								<div class="row" *ngIf="isEditSubTab">
+									<div class="col-sm-11">
+										<kendo-multiselect [data]="listItems" [allowCustom]="true"></kendo-multiselect>
+									</div>
+									<div class="col-sm-1">
+										<button type="button" class="btn btn-secondary" (click)="editSubTab(tabIndex)">
+											<i class="fa fa-edit"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</ng-template>
+					</kendo-tabstrip-tab>
+				</kendo-tabstrip>
+			</div>
+		</div>
+	</div>
+</div>

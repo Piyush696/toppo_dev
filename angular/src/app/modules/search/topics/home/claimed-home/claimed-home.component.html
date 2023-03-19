@@ -1,0 +1,111 @@
+<!-- IF SEARCHED TOPIC IS RESERVED -->
+<div class="center-sec" [ngStyle]="{'height': tabHeight}">
+        <div *ngIf="this.searchedTopic.status == 'RSV'" class="row">
+                <div class="col-6 p-5">
+                        <label class="heading">{{topic}}</label><br>
+                        <label class="subHeading">{{subHeading}}</label><br>
+                        <label class="topicStatus">{{topicStatus}}</label>
+                </div>
+                <div class="col-6">
+                        <img style="width: 100%; height: 100% auto;" src="assets/img/Capture.PNG">
+                </div>
+        </div>
+
+        <!-- IF SEARCHED TOPIC IS APPLICATION SUBMITTED -->
+        <div *ngIf="this.searchedTopic.status == 'SUB'" class="row">
+                <div class="col-6 p-5">
+                        <label class="heading">{{submitted}}</label><br>
+                        <label class="subHeading">{{submittedTitle}}</label><br>
+                        <label class="topicStatus">{{submittedStatus}}</label>
+
+                </div>
+                <div class="col-6">
+                        <img style="width: 100%; height: 100% auto;" src="assets/img/Capture.PNG">
+                </div>
+        </div>
+
+        <!-- IF SEARCHED TOPIC IS REVIEWED -->
+        <div *ngIf="this.searchedTopic.status == 'REV'" class="row">
+                <div class="col-6 p-5">
+                        <label class="heading">{{review}}</label><br>
+                        <label class="subHeading">{{reviewTitle}}</label><br>
+
+                        <label class="topicStatus">{{reviewStatus}}</label>
+
+                </div>
+                <div class="col-6">
+                        <img style="width: 100%; height: 100% auto;" src="assets/img/Capture.PNG">
+                </div>
+        </div>
+
+        <!-- IF SEARCHED TOPIC IS APPROVED -->
+        <div *ngIf="this.searchedTopic.status == 'APP'" class="row">
+                <div class="col-6 p-5">
+                        <label class="heading">{{approved}}</label><br>
+                        <label class="subHeading">{{approvedTitle}}</label><br>
+
+                        <label class="topicStatus">{{approvedStatus}}</label>
+
+                </div>
+                <div class="col-6">
+                        <img style="width: 100%; height: 100% auto;" src="assets/img/Capture.PNG">
+                </div>
+        </div>
+
+        <!-- IF SEARCHED TOPIC IS CLAIMED -->
+        <div *ngIf="this.searchedTopic.status == 'CLM'" class="row">
+                <div class="col-6 p-5">
+                        <label class="heading">{{claimed}}</label><br>
+                        <label class="subHeading">{{claimedTitle}}</label><br>
+
+                        <label class="topicStatus">{{claimedStatus}}</label>
+
+                </div>
+                <div class="col-6">
+                        <img style="width: 100%; height: 100% auto;" src="assets/img/Capture.PNG">
+                </div>
+        </div>
+
+        <!-- IF SEARCHED TOPIC IS INPROGRESS -->
+        <div *ngIf="this.searchedTopic.status == 'INP'" class="row">
+                <div class="col-6 p-5">
+                        <label class="heading">{{inProgressTopic}}</label><br>
+                        <label class="subHeading">{{inProgressTopicTitle}}</label><br>
+
+                        <label class="topicStatus">{{inProgressTopicStatus}}</label>
+
+                </div>
+                <div class="col-6">
+                        <img style="width: 100%; height: 100% auto;" src="assets/img/Capture.PNG">
+                </div>
+        </div>
+
+        <!-- IF SEARCHED TOPIC IS FORBIDDEN -->
+        <div *ngIf="this.searchedTopic.status == 'FRB'" class="row">
+                <div class="col-6 p-5">
+                        <label class="heading">{{forbidden}}</label><br>
+                        <label class="subHeading">{{forbiddenTitle}}</label><br>
+
+                        <label class="topicStatus">{{forbiddenStatus}}</label>
+
+                </div>
+                <div class="col-6">
+                        <img style="width: 100%; height: 100% auto;" src="assets/img/forbidden.PNG">
+                </div>
+        </div>
+
+        <!-- IF SEARCHED TOPIC IS UNKNOWN -->
+        <div *ngIf="this.searchedTopic.status == 'UNK'" class="row">
+                <div class="col-6 p-5">
+                        <label class="heading">{{unKnown}}</label><br>
+                        <label class="subHeading">{{unKnownTitle}}</label><br>
+
+                        <label class="topicStatus">{{unKnownStatus}}</label>
+
+                </div>
+                <div class="col-6">
+                        <img style="width: 100%; height: 100% auto;" src="assets/img/forbidden.PNG">
+                </div>
+        </div>
+
+</div>

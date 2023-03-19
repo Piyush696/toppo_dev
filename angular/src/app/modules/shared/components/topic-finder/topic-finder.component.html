@@ -1,0 +1,24 @@
+<div class="container-fluid">
+	<div class="my-3">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="row align-item-center">
+					<div class="col-md-3 text-left" >Pick Category:</div>
+					<div class="col-md-9 p-0">
+						<kendo-combobox	[placeholder]="'Select one...'"	textField="category"	valueField="similarwebcategory_id" (selectionChange)="selectedCategory($event)" [data]="uniqCategoryList">
+						</kendo-combobox>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="row align-item-center">
+					<div class="col-md-3 text-left">Find Topic:</div>
+					<div class="col-md-9 p-0">
+						<kendo-autocomplete	[data]="autoCompletefilteredTopic" valueField="topic" [filterable]="true" (filterChange)="handleTopicFilter($event)" [placeholder]="'Type topic here'" (valueChange)="getSelectedTopic($event)">
+						</kendo-autocomplete>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

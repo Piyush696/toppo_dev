@@ -1,0 +1,6 @@
+<!-- PDF CONTAINS -->
+<div class="container-fluid">
+    <pdf-viewer [src]="src" 
+    [page]="1"  [stick-to-page]="true" [render-text]="true" (after-load-complete)="afterLoadComplete($event)"  (pageChange)="onPageChange($event)" [ngStyle]="{'height': tabHeight}" style="width: 100%;"
+    [zoom]="1" [original-size]="true" [autoresize]="false" [show-all]="true" style="display:grid"></pdf-viewer>
+</div>

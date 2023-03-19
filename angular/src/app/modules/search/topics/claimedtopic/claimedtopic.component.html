@@ -1,0 +1,75 @@
+<!-- KENDO TABSTRIP CLAIMED COMPONENT. -->
+<div class="claimed-Topic">
+<kendo-tabstrip class="center-sec mt-4 ml-1 claimedTab" (tabSelect)="onTabSelect($event)">
+  <kendo-tabstrip-tab [title]="'INTRO'" [selected]="showIntroTab">
+    <ng-template kendoTabTitle>
+
+        <img *ngIf="onIntroComplete" src="assets/img/ok-1976099__340.png" style="width: 16px; height: 16px; " />
+
+    </ng-template>
+    <ng-template kendoTabContent>
+      <app-intro [searchedTerm]="searchedTerm" (introEvent)="onIntroDone($event)"></app-intro>
+    </ng-template>
+  </kendo-tabstrip-tab>
+
+  <kendo-tabstrip-tab *ngIf="videoTab" [title]="'VIDEO'" [selected]="showVideoTab">
+    <ng-template kendoTabTitle>
+
+        <img *ngIf="onVideoTabComplete" src="assets/img/ok-1976099__340.png" style="width: 16px; height: 16px; " />
+
+    </ng-template>
+    <ng-template kendoTabContent>
+        <app-video [videoUrl]="videoUrl" (videoEvent)="onVideoComplete($event,'video')"></app-video>
+    </ng-template>
+  </kendo-tabstrip-tab>
+  <kendo-tabstrip-tab *ngIf="overviewTab" [title]="'OVERVIEW'" [selected]="showOverviewTab">
+    <ng-template kendoTabTitle>
+
+        <img *ngIf="onOverViewComplete" src="assets/img/ok-1976099__340.png" style="width: 16px; height: 16px; " />
+
+    </ng-template>
+    <ng-template kendoTabContent>
+        <app-video [videoUrl]="overviewUrl" (videoEvent)="onVideoComplete($event,'overview')"></app-video>
+    </ng-template>
+  </kendo-tabstrip-tab>
+  <kendo-tabstrip-tab *ngIf="pdfTab" [title]="'WHITE PAPER'" [selected]="showPdfTab">
+    <ng-template kendoTabTitle>
+
+        <img *ngIf="onPdfTabComplete" src="assets/img/ok-1976099__340.png" style="width: 16px; height: 16px;"/>
+
+    </ng-template>
+    <ng-template kendoTabContent>
+        <app-white-paper (loginEvent)="onPdfComplete($event)"></app-white-paper>
+    </ng-template>
+  </kendo-tabstrip-tab>
+
+  <kendo-tabstrip-tab *ngIf="segueTab" [title]="'SEGUE'" [selected]="showSegueTab">
+    <ng-template kendoTabTitle>
+
+        <img *ngIf="onSegueComplete" src="assets/img/ok-1976099__340.png" style="width: 16px; height: 16px; " />
+
+    </ng-template>
+    <ng-template kendoTabContent>
+        <app-video [videoUrl]="segueUrl" (videoEvent)="onVideoComplete($event,'segue')"></app-video>
+    </ng-template>
+  </kendo-tabstrip-tab>
+  <kendo-tabstrip-tab *ngIf="loginTab" [title]="'LOGIN'" [selected]="showLoginTab">
+    <ng-template kendoTabTitle>
+
+        <img *ngIf="onLoginTabComplete" src="assets/img/ok-1976099__340.png" style="width: 16px; height: 16px; " />
+    </ng-template>
+    <ng-template kendoTabContent>
+        <app-login-tab (applicationEvent)="onLoginComplete($event)"></app-login-tab>
+    </ng-template>
+  </kendo-tabstrip-tab>
+  <kendo-tabstrip-tab *ngIf="applicationTab"  [title]="'APPLICATION'" [selected]="showApplicationTab">
+    <ng-template kendoTabTitle>
+
+        <img *ngIf="onApplicatioTabComplete"  src="assets/img/ok-1976099__340.png" style="width:20px; height: 20px; "/>
+    </ng-template>
+    <ng-template kendoTabContent>
+        <app-application></app-application>
+    </ng-template>
+  </kendo-tabstrip-tab>
+</kendo-tabstrip>
+</div>

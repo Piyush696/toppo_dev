@@ -1,0 +1,100 @@
+<div class="row admin_profile mb20">
+	<div class="col-sm-12">
+		<div class="admin_profile_info manage-bg">
+      <form class="form-signin" [formGroup]="homeTabForm" (ngSubmit)="onSubmit($event);">
+				<div class="form-container">
+
+					<div class="row mb20">
+						<div class="col-md-12 text-center">
+							<div id="top-notification-container">
+								<div class="alert-success" *ngIf="dispaly_success_message!=''">
+									{{dispaly_success_message}}
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row mb20">
+						<div class="col-md-2"><label>Topic Status</label></div>
+						<div class="col-md-4">
+							<kendo-dropdownlist formControlName="topicstatus" [data]="formtopicStatus" [textField]="'text'"	[valueField]="'val'" (selectionChange)="statusSelectionChange($event)" valuePrimitive="true"></kendo-dropdownlist>
+							<div *ngIf="addClicked && f.topicstatus.errors">
+								<div class="alert-danger" *ngIf="f.topicstatus.errors.required">
+									{{error_messages['TOPIC-STATUS-REQUIRED']}}
+								</div>
+							</div>
+						</div>
+						<div class="col-md-2"><label>Topic</label></div>
+						<div class="col-md-4">
+							<kendo-combobox valuePrimitive="true" [data]="topicList" formControlName="topic" [placeholder]="'Search topic..'" [textField]="'topic'" [valueField]="'topic_id'" [filterable]="true" (valueChange)="valueChange($event)" (selectionChange)="selectionChange($event)" (filterChange)="filterChange($event)" forbiddenWord></kendo-combobox>
+
+							<!--[disabled]="!selectedStatus || (selectedStatus?.val.length === 0 || selectedStatus?.val === 'UNC')"-->
+							<div *ngIf="addClicked && f.topic.errors">
+								<div class="alert-danger" *ngIf="f.topic.errors.required">
+									{{error_messages['TOPIC-NAME-REQUIRED']}}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div [hidden]="!showForm">
+						<div class="row mb20">
+							<div class="col-md-2"><label>Title</label></div>
+							<div class="col-md-10">
+								<input type="text" formControlName="title" name="title" forbiddenWord kendoTextBox/>
+								<div *ngIf="f.title.touched && f.title.errors">
+									<div class="alert-danger" *ngIf="f.title.errors?.required">
+										{{error_messages['MANAGE-HOME-TITLE-REQUIRED']}}
+									</div>
+									<div class="alert-danger" *ngIf="f.title.errors?.minlength || f.title.errors?.maxlength">
+										{{error_messages['MANAGE-HOME-TITLE-INVALID']}} {{site_variables?.hometitlemin}} to
+										{{site_variables?.hometitlemax}}
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row mb20">
+							<div class="col-md-2"><label>Main Image</label></div>
+							<div class="col-md-2 file-uploader">
+								<div class="form-group">
+									<label id="#bb" class="chooseimg">SVG Only
+										<input type="file" id="homeImage" (change)="onImageChanged($event)"/>
+									</label>
+								</div>
+							</div>
+							<div class="col-md-8 pt-3">
+								<div *ngIf="!error_type">{{image_name}}</div>
+								<div class="alert-danger" *ngIf="error_type && error_type=='image_type'">
+									{{error_messages['MANAGE-IMAGE-TYPE-INVALID']}}
+								</div>
+								<div class="alert-danger" *ngIf="error_type && error_type=='image_size'">
+									{{error_messages['MANAGE-HOME-PAGE-IMAGE-SIZE-INVALID']}}
+								</div>
+								<span class="alert-danger" *ngIf="error_type && error_type=='image_required'">
+									{{error_messages['MANAGE-HOME-IMAGE-REQUIRED']}}
+								</span>
+							</div>
+						</div>
+						<div class="row mb20">
+							<div class="col-md-2"><label>Main Content</label></div>
+							<div id="home-topic" class="col-md-10">
+								<textarea id="editor" name="main-content" data-mintextlength="75" data-maxtextlength="150" data-role="editor"
+								data-bind="value: textareaValue" data-maxtextlength-msg="Content must be shorter than 150 chars"
+								data-mintextlength-msg="Content must be greater than 75 chars"
+								data-forbidden="value: textareaValue">
+							</textarea>
+							<span data-for='main-content' class='k-invalid-msg'></span>
+							<span class="alert-danger test-center" *ngIf="diaplayMessage">
+								{{error_messages['MANAGE-HOME-CONTENT-REQUIRED']}}
+							</span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-10 text-center text-success"> {{info_message}}</div>
+						<div class="col-md-2"><input class="primary_btn" type="submit" [value]="tab_home_id? 'update' : 'Submit'" kendoButton></div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+</div>

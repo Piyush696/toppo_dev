@@ -1,0 +1,6 @@
+<!-- VIDEO TAB -->
+<div *ngIf=videoUrl class="container-fluid">
+        <video controls (ended)="triggerEvent()" style="width: 100%;" [ngStyle]="{'height': tabHeight}">
+                <source src={{videoUrl}} type="video/mp4">
+       </video>
+</div>

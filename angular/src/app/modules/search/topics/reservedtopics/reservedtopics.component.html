@@ -1,0 +1,200 @@
+<div>
+  <!-- TITLE AND SEARCH BOX DIV -->
+  <div class="cust-topic-title-searchbar" id="reserved-title">
+    <div class="row">
+      <div class="col-lg-8 col-xs-7 col-md-8 col-sm-8">
+        <p class="mb-0" [ngStyle]="{'font-size': headSize}">{{display_note_message}}</p>
+      </div>
+      <div class="col-2"></div>
+      <div class="col-lg-2 col-xs-3 col-md-2 col-sm-2">
+        <div class="flex-shrink-1">
+          <form name="searchTopicForm" [formGroup]="searchTopicForm" (ngSubmit)="getSearchInput()" role="form">
+            <div class="input-group input-group-search">
+              <div class="input-group-prepend">
+                <button type="submit" class="cust-icon-srch" id="basic-addon1"><img _ngcontent-c2=""
+                  src="./assets/svg/icons8-search.svg"></button>
+              </div>
+              <input kendoTextBox autocomplete="off" formControlName="searchterm"
+                class="form-control cust-topic-search-bar" placeholder="Find in Reserved Topics">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- DISPLAY RESERVED TOPIC CATEGORY LIST -->
+  <div class="center-sec" *ngIf="categories && categories.length > 0">
+    <div class="row">
+      <div class="col-12">
+        <div class="cust-cat-card" id="reserved-category">
+          <div class="dis-flex pl-2">
+            <div *ngIf="Allheight">
+              <div class="row">
+                <div *ngFor="let cat of categories" (click)="onSelectCategory(cat)" class="topic-area">
+                  <!-- SELECTED CATEGORY WILL HAVE BACKGROUND BLUE -->
+                  <label [ngClass]="{'cat-selected' : highlightCategory && highlightCategory.indexOf(cat) !== -1}">
+                    <span class="topic-title"> {{ cat.text }} </span></label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="Customheight1">
+            <div class="row">
+              <kendo-tabstrip class="p-1">
+                <kendo-tabstrip-tab [title]="'Tab 1'" [selected]="true">
+                  <ng-template kendoTabContent>
+                    <div class="dis-flex">
+                      <div *ngFor="let cat of categories | slice : 0:categories.length/2;"
+                        (click)="onSelectCategory(cat)" class="topic-area">
+                        <!-- SELECTED CATEGORY WILL HAVE BACKGROUND BLUE -->
+                        <label
+                          [ngClass]="{'cat-selected' : highlightCategory && highlightCategory.indexOf(cat) !== -1}">
+                          <span class="topic-title"> {{ cat.text }} </span></label>
+                      </div>
+                    </div>
+                  </ng-template>
+                </kendo-tabstrip-tab>
+                <kendo-tabstrip-tab [title]="'Tab 2'">
+                  <ng-template kendoTabContent>
+                    <div class="dis-flex">
+                      <div *ngFor="let cat of categories | slice : categories.length/2:categories.length;"
+                        (click)="onSelectCategory(cat)" class="topic-area">
+                        <!-- SELECTED CATEGORY WILL HAVE BACKGROUND BLUE -->
+                        <label
+                          [ngClass]="{'cat-selected' : highlightCategory && highlightCategory.indexOf(cat) !== -1}">
+                          <span class="topic-title"> {{ cat.text }} </span></label>
+                      </div>
+                    </div>
+                  </ng-template>
+                </kendo-tabstrip-tab>
+              </kendo-tabstrip>
+            </div>
+          </div>
+          <div *ngIf="Customheight2">
+            <div class="row">
+              <kendo-tabstrip class="p-1">
+                <kendo-tabstrip-tab [title]="'Tab 1'" [selected]="true">
+                  <ng-template kendoTabContent>
+                    <div class="dis-flex">
+                      <div *ngFor="let cat of categories | slice : 0:categories.length/3;"
+                        (click)="onSelectCategory(cat)" class="topic-area">
+                        <!-- SELECTED CATEGORY WILL HAVE BACKGROUND BLUE -->
+                        <label
+                          [ngClass]="{'cat-selected' : highlightCategory && highlightCategory.indexOf(cat) !== -1}">
+                          <span class="topic-title"> {{ cat.text }} </span></label>
+                      </div>
+                    </div>
+                  </ng-template>
+                </kendo-tabstrip-tab>
+                <kendo-tabstrip-tab [title]="'Tab 2'">
+                  <ng-template kendoTabContent>
+                    <div class="dis-flex">
+                      <div *ngFor="let cat of categories | slice : categories.length/3:(categories.length*2)/3;"
+                        (click)="onSelectCategory(cat)" class="topic-area">
+                        <!-- SELECTED CATEGORY WILL HAVE BACKGROUND BLUE -->
+                        <label
+                          [ngClass]="{'cat-selected' : highlightCategory && highlightCategory.indexOf(cat) !== -1}">
+                          <span class="topic-title"> {{ cat.text }} </span></label>
+                      </div>
+                    </div>
+                  </ng-template>
+                </kendo-tabstrip-tab>
+                <kendo-tabstrip-tab [title]="'Tab 3'">
+                  <ng-template kendoTabContent>
+                    <div class="dis-flex">
+                      <div *ngFor="let cat of categories | slice : (categories.length*2)/3:categories.length;"
+                        (click)="onSelectCategory(cat)" class="topic-area">
+                        <!-- SELECTED CATEGORY WILL HAVE BACKGROUND BLUE -->
+                        <label
+                          [ngClass]="{'cat-selected' : highlightCategory && highlightCategory.indexOf(cat) !== -1}">
+                          <span class="topic-title"> {{ cat.text }} </span></label>
+                      </div>
+                    </div>
+                  </ng-template>
+                </kendo-tabstrip-tab>
+              </kendo-tabstrip>
+            </div>
+          </div>
+          <div *ngIf="Customheight3">
+            <div class="row">
+              <kendo-tabstrip class="p-1">
+                <kendo-tabstrip-tab [title]="'Tab 1'" [selected]="true">
+                  <ng-template kendoTabContent>
+                    <div class="dis-flex">
+                      <div *ngFor="let cat of categories | slice : 0:categories.length/4;"
+                        (click)="onSelectCategory(cat)" class="topic-area">
+                        <!-- SELECTED CATEGORY WILL HAVE BACKGROUND BLUE -->
+                        <label
+                          [ngClass]="{'cat-selected' : highlightCategory && highlightCategory.indexOf(cat) !== -1}">
+                          <span class="topic-title"> {{ cat.text }} </span></label>
+                      </div>
+                    </div>
+                  </ng-template>
+                </kendo-tabstrip-tab>
+                <kendo-tabstrip-tab [title]="'Tab 2'">
+                  <ng-template kendoTabContent>
+                    <div class="dis-flex">
+                      <div *ngFor="let cat of categories | slice : categories.length/4:(categories.length*2)/4;"
+                        (click)="onSelectCategory(cat)" class="topic-area">
+                        <!-- SELECTED CATEGORY WILL HAVE BACKGROUND BLUE -->
+                        <label
+                          [ngClass]="{'cat-selected' : highlightCategory && highlightCategory.indexOf(cat) !== -1}">
+                          <span class="topic-title"> {{ cat.text }} </span></label>
+                      </div>
+                    </div>
+                  </ng-template>
+                </kendo-tabstrip-tab>
+                <kendo-tabstrip-tab [title]="'Tab 3'">
+                  <ng-template kendoTabContent>
+                    <div class="dis-flex">
+                      <div *ngFor="let cat of categories | slice : (categories.length*2)/4:(categories.length*3)/4;"
+                        (click)="onSelectCategory(cat)" class="topic-area">
+                        <!-- SELECTED CATEGORY WILL HAVE BACKGROUND BLUE -->
+                        <label
+                          [ngClass]="{'cat-selected' : highlightCategory && highlightCategory.indexOf(cat) !== -1}">
+                          <span class="topic-title"> {{ cat.text }} </span></label>
+                      </div>
+                    </div>
+                  </ng-template>
+                </kendo-tabstrip-tab>
+                <kendo-tabstrip-tab [title]="'Tab 4'">
+                  <ng-template kendoTabContent>
+                    <div class="dis-flex">
+                      <div *ngFor="let cat of categories | slice : (categories.length*3)/4:categories.length;"
+                        (click)="onSelectCategory(cat)" class="topic-area">
+                        <!-- SELECTED CATEGORY WILL HAVE BACKGROUND BLUE -->
+                        <label
+                          [ngClass]="{'cat-selected' : highlightCategory && highlightCategory.indexOf(cat) !== -1}">
+                          <span class="topic-title"> {{ cat.text }} </span></label>
+                      </div>
+                    </div>
+                  </ng-template>
+                </kendo-tabstrip-tab>
+              </kendo-tabstrip>
+            </div>
+          </div>
+          
+          <div class="cust-card-btn mt-2">
+            <button kendoButton class="primary_btn btn-sm" (click)="onAll()">All</button>
+            <button kendoButton class="primary_btn btn-sm" (click)="onClear()">Clear</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- TOPIC LISTING WITH PAGINATION -->
+    <div id="row-tTopicPagination" *ngIf="!notTopicFound">
+      <app-custom-pagination
+        [data]="tTopic"
+        [itemPerPage]="itemPerPage"
+        [changePage]="changePage"
+        [selectedCategory]="selectedCategory"
+        [searchTopic]="searchTopic"
+        [currentPage]="currentPage">
+      </app-custom-pagination>
+    </div>
+    <!-- NO TOPIC FOUND -->
+    <div *ngIf="notTopicFound" class="section-notFound">
+      {{topic_not_found}}
+    </div>
+  </div>
+</div>

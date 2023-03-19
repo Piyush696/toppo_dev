@@ -1,0 +1,194 @@
+<form class="form-signin" [formGroup]="profileForm" (ngSubmit)="onSubmit()" >
+<!-- GENERAL ACCOUNT INFORMATION START -->
+<div class="d-flex justify-content-center admin_profile">
+ <div class="col-sm-12">
+    <div class="admin_profile_info manage-bg">
+        <div class="row">
+          <div class="col-md-4">
+            <h2>General Account Information</h2>
+          </div>
+          <div class="col-md-8">
+            <div id="top-notification-container">
+              <div class="alert-success" *ngIf="dispaly_success_message!=''">
+                  {{dispaly_success_message}} 
+              </div>
+            </div>
+          </div>
+        </div>  
+        <div class="row">
+          <div class="col-md-4 order-md-2 order-sm-1 file-uploader">
+            <div class="form-group" id="avatar">
+              <img id="profileimage" src="{{pic}}" (error)="setDefaultPic()" width="88px" height="88px" />
+              <image-cropper style="display:none; width: 200px; height: 200px; margin: 0 auto;" id="cropper"
+                  [imageChangedEvent]="imageChangedEvent"
+                  [maintainAspectRatio]="true"
+                  [aspectRatio]="1"
+                  [resizeToWidth]="400"
+                  format="png"
+                  (imageCropped)="imageCropped($event)"
+              ></image-cropper>
+            </div>
+            <div class="form-group">
+                <label id="#bb" class="chooseimg">Choose Image
+                   <input type="file" id="File" (change)="onFileChanged($event)" />
+                </label>
+                <div *ngIf="error_type">
+                  <div class="alert-danger text-center" *ngIf="error_type=='image_type'">
+                    {{error_messages['PROFILE-IMAGE-TYPE-INVALID']}}
+                  </div>
+                  <div class="alert-danger text-center" *ngIf="error_type=='image_transparency'">
+                    {{error_messages['PROFILE-IMAGE-TRANSPARENCY']}}
+                  </div>
+
+                  <div class="alert-danger text-center" *ngIf="error_type=='image_size'">
+                    {{error_messages['PROFILE-IMAGE-SIZE-INVALID']}}
+                  </div>
+                </div>
+            </div>
+          </div>                
+          <div class="col-md-8 order-md-1 order-sm-2">
+             <div class="row">
+                <div class="col-sm-6"> 
+                   <div class="form-group">
+                      <label>First Name</label>
+                      <input type="text" formControlName="namefirst" name="namefirst" kendoTextBox />
+                      <div *ngIf="f.namefirst.touched && f.namefirst.errors">
+                        <div class="alert-danger" *ngIf="f.namefirst.errors.required">
+                          {{error_messages['SIGNUP-FIRST-NAME-REQUIRED']}}
+                        </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-sm-6">
+                   <div class="form-group">
+                      <label>Last Name</label>
+                      <input type="text" formControlName="namelast" name="namelast" kendoTextBox />
+                      <div *ngIf="f.namelast.touched && f.namelast.errors">
+                        <div class="alert-danger" *ngIf="f.namelast.errors.required">
+                          {{error_messages['SIGNUP-LAST-NAME-REQUIRED']}}
+                        </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                      <label>Email</label>
+                      <input type="text" formControlName="email" name="email" kendoTextBox />           
+                      <div *ngIf="f.email.touched && f.email.errors">
+	                      <div class="alert-danger" *ngIf="f.email.errors.required">
+	                        {{error_messages['SIGNUP-EMAIL-REQUIRED']}}
+	                      </div>
+	                      <div class="alert-danger" *ngIf="f.email.errors.pattern">
+	                        {{error_messages['SIGNUP-EMAIL-REQUIRED']}}
+	                      </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                   <div class="form-group">
+                      <label>Mobile Phone</label>
+                      <kendo-maskedtextbox formControlName="phonemobile" class="top-form-control has-value" [mask]="mask" [maskValidation]="maskValidation"></kendo-maskedtextbox>
+                      <div *ngIf="f.phonemobile.touched && f.phonemobile.errors">
+                        <div class="alert-danger" *ngIf="f.phonemobile.errors.required">
+                          {{error_messages['SIGNUP-PHONE-REQUIRED']}}
+                        </div>
+                        <div class="alert-danger" *ngIf="f.phonemobile.errors.patternError">
+                          {{error_messages['SIGNUP-PHONE-REQUIRED']}}
+                        </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+</div>
+<!-- GENERAL ACCOUNT INFORMATION END -->
+<!-- CONTACT INFORMATION START -->
+<div class="d-flex justify-content-center admin_profile">
+ <div class="col-sm-12">
+    <div class="admin_profile_info manage-bg">
+       <h2>Contact Information</h2>
+       <div class="row">
+          <div class="col-md-3 col-sm-6">
+             <div class="form-group">
+                <label>Address 1</label>
+                <input type="text" formControlName="address1" name="address1" kendoTextBox />
+             </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+             <div class="form-group">
+                <label>Address 2</label>
+                <input type="text" formControlName="address2" name="address2" kendoTextBox  />
+             </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+             <div class="form-group">
+                <label>Skype ID</label>
+                <input type="text" formControlName="skype" name="skype" kendoTextBox  />
+             </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+             <div class="form-group">
+                <label>Other Phone</label>
+                <kendo-maskedtextbox formControlName="phoneother" class="top-form-control has-value" [mask]="mask" [maskValidation]="maskValidation"></kendo-maskedtextbox>
+                <div *ngIf="f.phoneother.touched && f.phoneother.errors">
+                  <div class="alert-danger" *ngIf="f.phoneother.errors.patternError">
+                    {{error_messages['SIGNUP-PHONE-REQUIRED']}}
+                  </div>
+                </div>
+
+             </div>
+          </div>
+       </div>
+       <div class="row">
+       	  <div class="col-md-3 col-sm-6">
+             <div class="form-group">
+                <label>Zip</label>
+                <input type="text" formControlName="zip" name="zip" kendoTextBox />
+                <div *ngIf="f.zip.touched && f.zip.errors">
+                  <div class="alert-danger" *ngIf="f.zip.errors.required">
+                    {{error_messages['SIGNUP-ZIP-INVALID']}}
+                  </div>
+                  <div class="alert-danger" *ngIf="f.zip.errors.pattern">
+                    {{error_messages['SIGNUP-ZIP-INVALID']}}
+                  </div>
+                </div>
+                <div class="alert-danger" *ngIf="error_type=='zip'">
+                    {{error_messages['SIGNUP-ZIP-ERROR']}}
+                </div>
+             </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+             <div class="form-group">
+                <label>City</label>
+                <input type="hidden" formControlName="city" name="city" />
+                <input type="text" formControlName="cityname" name="cityname" />
+             </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+             <div class="form-group">
+                <label>State</label>
+                <input type="hidden" formControlName="state" name="state" />
+                <input type="text" formControlName="statename" name="statename" />
+             </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+             <div class="form-group">
+                <label>Country</label>
+                <input type="hidden" formControlName="country" name="country" placeholder=""  />
+                <input type="text" formControlName="countryname" name="countryname" placeholder=""  />
+             </div>
+          </div>
+       </div>
+
+       <div class="row">
+          <div class="col-md-9"></div>
+          <div class="col-md-3"><input class="primary_btn" type="submit" value="Update Profile" kendoButton></div>
+       </div>
+    </div>
+ </div>
+</div>
+<!-- CONTACT INFORMATION END -->
+</form>

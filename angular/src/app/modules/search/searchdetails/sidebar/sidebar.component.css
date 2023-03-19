@@ -1,0 +1,43 @@
+/* SIDEBAR */
+aside{background:#fff;padding:10px 15px 10px 15px;position:absolute;top:75px;left:0;box-shadow:0px 6px 20px rgba(47,66,81,0.05);border-right:1px solid #DBDEE0;}
+.head{display: flex;align-items: center;line-height: 22px;font-size: 18px;letter-spacing: -0.214667px;color: #3C505C;opacity:0.9;margin-left:34px;}
+.sub-te{clear:both;font-weight:normal;line-height:25px;font-size:14px;letter-spacing:-0.214667px;color:#545454;margin:15px 0px;}
+.sub-head {color: #3C505C;letter-spacing: -0.214667px;text-align: center;align-items: center;display: flex;line-height: 120%; font-size: 19px;font-weight: bold;font-style: normal; margin-left: 34px;}
+/* EDITOR PANEL */
+.top_panel{height:200px;flex:0 0 auto;}
+.top_panel1{flex:0 0 auto;}
+.left{float:left;margin-right:10px;width:50px;height:50px;border-radius:50%;}
+.left img{max-width:100%;border-radius:50%}
+.right{overflow:hidden;margin-bottom:20px;}
+.men-text{font-style:normal;font-weight:300;line-height:19px;font-size:12px;letter-spacing:-0.214667px;color:#F2F2F2;margin-bottom:0;font-family:'Montserrat',sans-serif;}
+.share-sp{flex:1 1 30px;}
+.share-sp a{background:linear-gradient(263.61deg,#44616D 0%,#344349 100%);border-radius:3px;border:none;display:block;font-weight:normal;line-height:19px;font-size:12px;text-align:center;letter-spacing:-0.214667px;color:#FFFFFF;border-radius:3px;height:100%;}
+.share-sp a span{border-bottom:1px solid #fff;border-bottom-style:dashed;}
+.bg{background-repeat:no-repeat;background-size:100% 100%;padding:0 15px 0 15px;border-radius:4px;margin:10px 0px 10px 0px;position:relative;flex:0 0 auto;}
+
+.sidebar-border {border: 5px solid #E6EBEE;border-radius: 12px;border-radius: 6px;box-sizing: border-box;  mix-blend-mode: normal;background: #FFFFFF;}
+.sidebar {background: linear-gradient(360deg, #FFFFFF 2.24%, #E6EBEE 138.06%); position: relative; top: -2.3%; border: 5px solid #E6EBEE; border-radius: 8px; box-sizing: border-box; animation: 2.0s linear 0s 1 slideInFromTop}
+@keyframes slideInFromTop {
+    0%{
+        transform: translateY(-250%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+.button-rounded {width: 98px; height: 48px; background: #559EE2; box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.07);border-radius: 80px;}
+.event-color {color: #3C505C; letter-spacing: 0.785333px; align-items: center; display: flex; line-height: 30px; font-size: 18px;}
+.event-color1 {color: #559EE2;text-transform: capitalize;font-weight: normal;letter-spacing: 0.785333px; align-items: center; display: flex; line-height: 30px; font-size: 18px;}
+.blue-line {border: 1px solid; color: rgba(149, 192, 248, 0.795)}
+.bikes {color: #3C505C;letter-spacing: -0.214667px;line-height: 120%;font-size: 20px;font-weight: bold;font-style: normal;}
+.bikesInfo {color: #7B8C96;letter-spacing: -0.214667px;line-height: 22px;font-size: 15px;font-weight: 600;font-style: normal;}
+/*Side bar media queries*/
+@media (min-width: 481px) and (max-width: 767px) {
+    .sidebar-border{font-size: 14px;}
+    html {
+        width: 50%;
+        transform: scale(2);
+        transform-origin: 0 0;
+    }
+    
+  }

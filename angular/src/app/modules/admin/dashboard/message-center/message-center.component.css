@@ -1,0 +1,18 @@
+.radioGroup{margin-top: 3px;}
+.lefttab{margin-top: 20px;}
+h4{font-size: 16px !important;}
+p{font-size: 14px !important;}
+.topbottomborder{border-top: 1px solid rgba(33,37,41,0.125); border-bottom: 1px solid rgba(33,37,41,0.125); padding: 5px 15px; margin-bottom:20px;}
+.ninety{float: left; width: 90%;}
+.ten{float: left; width: 10%;}
+.admin-img{width: 54.8px !important; height: 54.8px !important;}
+.pt3{padding-top: 3px;}
+.btnwidthauto{width: auto; margin-right: 10px;}
+.messagecenter-main-subjectstab-overdue-icon{background: #FF0000; position: absolute; right: 10px; top: 0; width: 15px; height: 15px; border-radius: 50%;}
+.k-textarea{width: 100%;}
+#messagecenter-main-noreplyneeded-btn, #messagecenter-main-pleasereply-btn{padding: 38px 10px; line-height: 2px;}
+#reply_form{position: absolute;width: 100%;bottom: 15px;}
+.relative{position: relative;}
+.arrow_cons{width: 24px;}
+#messagecenter-main-subjectstab-subjectarea-div{position: relative; height: 100%;}
+#prev_next{position: absolute; bottom: 15px; right: 0; left: 0;}

@@ -1,0 +1,29 @@
+/* MY PROFILE */
+.admin_profile {padding-top:15px;}
+.admin_profile_info h2 {color:#6d6a6a; font-size:1.2rem; font-weight:bold; padding-top:7px; margin-bottom:20px;}
+.file-uploader label {cursor:pointer; text-align:center; padding:4.5px 0 5px; background:#6B6B6B; display:table; color:#fff; border-radius:3px;}
+.file-uploader input[type="file"] {display:none;}
+.form-group object {margin:0px auto; display:block;}
+.col-25 {-ms-flex:0 0 20%; flex:0 0 20%; max-width:20%; position:relative; width:100%; min-height:1px; padding-right:15px; padding-left:15px;}
+span.k-widget.k-dropdown {width:100% !important;}
+.k-dropdown-wrap .k-input {padding:4px 4px 5px;}
+.alert-danger{background: none; border: none; color: #dc3545; text-align: left;}
+.alert-success{background-color: #fff; color: #149b32; padding-top: 7px; font-size: 0.9rem;}
+#avatar{text-align: center;}
+#canvas1, #profileimage{width: 88px; height: 88px; margin:0 auto; border-radius: 50%;}
+.chooseimg{font-size: 14px;}
+/* MEDIA */
+@media (max-width: 768px) 
+{
+  .col-25 {-ms-flex:0 0 50%; flex:0 0 50%; max-width:50%;}
+}
+
+@media (max-width: 568px) 
+{
+  .col-25 {-ms-flex:0 0 100%; flex:0 0 100%; max-width:100%;}
+}
+
+@media (max-width: 480px) 
+{
+	
+}

@@ -1,0 +1,19 @@
+<form name="searchform" [formGroup]="searchForm" (ngSubmit)="checkInput($event)" role="form">
+  <div class="top-search-input searchbox-shadow" [ngClass]="{'invalid': f.searchterm.touched && f.searchterm.errors  }">
+    <button type="submit" class="custom-search"><img src="./assets/svg/icons8-search.svg" ></button>
+    <input kendoTextBox autocomplete="off" id="searchterm" class="search-form" formControlName="searchterm" placeholder="Search for a Topic" />
+  </div>
+</form>
+
+<!-- VALIDATION ERROR MESSAGES -->
+<div class="top-error-message">
+    <div id="top-notification-container" *ngIf="f.searchterm.touched && f.searchterm.errors">
+        <div class="alert-danger" *ngIf="f.searchterm.errors.required">
+            {{error_messages['SEARCHTERM-REQUIRED']}}
+        </div>
+        <div class="alert-danger" *ngIf="f.searchterm.errors.validterm">
+            {{error_messages['FORBIDDEN-WORD-ERROR']}}
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+</div>

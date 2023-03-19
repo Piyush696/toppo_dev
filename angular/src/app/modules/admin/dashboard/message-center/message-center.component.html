@@ -1,0 +1,131 @@
+<div class="row mb20 messagecenterpage">
+	<div class="col-md-3">
+		<div class="manage-bg">
+			<div class="radioGroup">
+		       <input type="radio" name="messagecenter-main-rbgroup" id="messagecenter-main-rb-live" class="k-radio" checked />
+		       <label class="k-radio-label" for="messagecenter-main-rb-live">Live</label>
+
+		       <input type="radio" name="messagecenter-main-rbgroup" id="messagecenter-main-rb-unread" class="k-radio" />
+		       <label class="k-radio-label" for="messagecenter-main-rb-unread">Unread</label>
+
+		       <input type="radio" name="messagecenter-main-rbgroup" class="k-radio" id="messagecenter-main-rb-all" />
+		       <label class="k-radio-label" for="messagecenter-main-rb-all">All</label>
+		    </div>
+		</div>
+	</div>
+	<div class="col-md-9">
+		<div class="manage-bg">
+			<div class="row">
+				<div class="col-md-5">
+					<div class="radioGroup">
+				       <input type="radio" name="group" id="today" class="k-radio" checked />
+				       <label class="k-radio-label" for="today">Today</label>
+
+				       <input type="radio" name="group" id="yesterday" class="k-radio" />
+				       <label class="k-radio-label" for="yesterday">Yesterday</label>
+
+				       <input type="radio" name="group" id="week" class="k-radio" />
+				       <label class="k-radio-label" for="week">Last 7 days</label>
+
+				       <input type="radio" name="group" class="k-radio" id="all_time" />
+				       <label class="k-radio-label" for="all_time">All Time</label>
+				    </div>
+				</div>
+				<div class="col-md-2">
+					<kendo-datepicker [value]="value"></kendo-datepicker>
+				</div>
+				<div class="col-md-5"><div class="message_box" class="message_error">Please reply to your messages.</div></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-3 leftpanel">
+		<div class="manage-bg"> 
+			<input kendoTextBox placeholder="Search" name="messagecenter-main-search-txtbox" /> 
+
+			<kendo-tabstrip (tabSelect)="onLeftTabSelect($event)" id="messagecenter-tabs-ul-kendoTabStrip-main" class="lefttab">
+        		<kendo-tabstrip-tab [title]="'Subject'" [selected]="true" id="messagecenter-tabs-li-tab-subjects">
+          			<ng-template kendoTabContent>
+          				<div class="subject_content" id="messagecenter-main-subjectstab-subjectarea-div">
+	          				<div class="row">
+	            				<div class="col-md-3">
+	            					<div class="admin-img">
+										<img class="messagecenter-main-subjectstab-topicopolisimage-img" src="{{pic}}" alt="editor" class="editor-pic" (error)="setDefaultPic()">
+									</div>
+	            				</div>
+	            				<div class="col-md-9">
+	            					<h4 class="messagecenter-main-subjectstab-sender-txt">Topicopolis</h4>
+	            					<p class="messagecenter-main-subjectstab-subject-txt">Your new quality score has been posted . . .</p>
+	            				</div>
+	            			</div>
+	            			<div class="row">
+	            				<div class="col-md-3">
+	            					<div class="admin-img">
+	            						<div class="messagecenter-main-subjectstab-overdue-icon"></div>
+										<img class="messagecenter-main-subjectstab-topicopolisimage-img" src="{{pic}}" alt="editor" class="editor-pic" (error)="setDefaultPic()">
+									</div>
+	            				</div>
+	            				<div class="col-md-9">
+	            					<h4 class="messagecenter-main-subjectstab-sender-txt">Topicopolis</h4>
+	            					<p class="messagecenter-main-subjectstab-subject-txt">Your new quality score has been posted . . .</p>
+	            				</div>
+	            			</div>
+	            			<div class="row" id="prev_next">
+	            				<div class="col-md-2"><img class="arrow_cons" src="./assets/svg/left-arrow-angle.svg" id="messagecenter-main-reviewtab-prev-icon" alt="prev" /></div>
+	            				<div class="col-md-8"></div>
+	            				<div class="col-md-2"><img class="arrow_cons" src="./assets/svg/right-arrow-angle.svg" id="messagecenter-main-reviewtab-next-icon" alt="next" /></div>
+	            			</div>
+	            		</div>
+          			</ng-template>
+        		</kendo-tabstrip-tab>
+        		<kendo-tabstrip-tab [title]="'Create'" id="messagecenter-tabs-li-tab-create">
+          			<ng-template kendoTabContent>
+            			<div class="create_content">
+            				<input kendoTextBox placeholder="Related to . . ." name="messagecenter-main-create-txtbox" />
+            				<input kendoTextBox placeholder="Send message to . . ." name="messagecenter-main-search-txtbox" />
+            				<input kendoTextBox placeholder="Add participant . . ." name="messagecenter-main-search-txtbox" />
+            				<input kendoTextBox placeholder="Subject" name="messagecenter-main-search-txtbox" />
+            			</div>
+          			</ng-template>
+        		</kendo-tabstrip-tab>
+      		</kendo-tabstrip>
+		</div>
+	</div>
+	<div class="col-md-9 rightpanel">
+		<div class="manage-bg relative">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="topbottomborder">
+						TUESDAY | JUNE 24, 2019
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-1">
+					<div class="admin-img">
+						<img src="{{pic}}" alt="editor" class=" messagecenter-main-avatar-img" (error)="setDefaultPic()">
+					</div>
+				</div>
+				<div class="col-md-11 pt3">
+					<h4 class="messagecenter-main-namedetail-txt">Topicopolis</h4>
+					<div>
+						<div class="ninety"><p class="messagecenter-main-descriptiondetail-txt">Your new quality score has been posted . . .</p></div>
+						<div class="ten"><p class="messagecenter-main-recordedtime-txt">11:02 AM</p></div>
+					</div>
+					<div>
+						<input type="button" class="btnwidthauto primary_btn" id="messagecenter-main-gotit-btn" name="gotit" value="Got It!">
+						<input type="button" class="btnwidthauto primary_btn" id="messagecenter-main-iwanttoreply-btn" name="gotit" value="I want to reply">
+					</div>
+				</div>
+			</div>
+
+			<div class="row" id="reply_form">
+				<div class="col-md-8"><textarea class="k-textarea" id="messagecenter-main-messagebox-txtarea" name="messagecenter-main-messagebox-txtarea"></textarea></div>
+				<div class="col-md-2 gap"><input type="button" class="primary_btn" id="messagecenter-main-noreplyneeded-btn" name="messagecenter-main-noreplyneeded-btn" value="NO REPLY NEEDED"></div>
+				<div class="col-md-2"><input type="button" class="primary_btn" id="messagecenter-main-pleasereply-btn" name="messagecenter-main-pleasereply-btn" value="PLEASE REPLY"></div>
+			</div>
+
+		</div>
+	</div>
+</div>

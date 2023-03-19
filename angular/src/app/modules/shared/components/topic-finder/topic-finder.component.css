@@ -1,0 +1,5 @@
+.dis-flex {display: inline-flex;}
+.align-item-center {align-items: center;text-align: right;}
+kendo-dropdownlist, .k-dropdown {width: 100%;}
+kendo-autocomplete, .k-autocomplete {width: 100%;}
+kendo-combobox {width: 100%;}

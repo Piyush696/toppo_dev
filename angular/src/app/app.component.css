@@ -1,0 +1,3 @@
+/* SEARCH TEXTBOX AND ITS CONTAINER */
+input#searchterm:focus {background: #fff;}
+

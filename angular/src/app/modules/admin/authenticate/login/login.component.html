@@ -1,0 +1,39 @@
+<div class="top-wrapper">
+	<!-- MAIN LOGO -->
+	<div class="top-logo-container">
+		&nbsp;
+		<!-- <img src="/assets/svg/topicopolis_logo_mainpage.svg" /> -->
+	</div>
+
+	<form class="form-signin" [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
+		 <div class="card card-container">
+			<h1>Sign In</h1>	
+			<!-- ERROR NOTIFICATION IS DISPLAYED HERE -->
+			<div class="alert-danger" *ngIf="login_error">
+				<span *ngIf="login_error == 'username'"> {{error_messages['LOGIN-ERROR-USERNAME']}}</span>
+			</div>
+
+			<div class="top-input-wrapper marT">
+	            <input type="text" formControlName="username" class="top-form-control" placeholder="username">
+                <label><img src="./assets/svg/@.svg" /></label>
+				<div *ngIf="f.username.touched && f.username.errors">
+					<div class="alert-danger" *ngIf="f.username.errors.required">
+						{{error_messages['LOGIN-USERNAME-REQUIRED']}}
+					</div>
+				</div>
+			</div>
+            <div class="checkbox_div">
+            	<div class="fifty">
+	            	<label class="font-normal checkbox-min" >
+	                    <input type="checkbox" formControlName="remember"> 
+	                    <span class="checkmark"></span> &nbsp;<span class="remembertext">Remember me</span>
+	                </label>
+            	</div>
+            	<div class="fifty text-right">
+            		<button class="btn btn-signin" [disabled]="!loginForm.valid" type="submit">SIGN IN</button>
+            	</div>
+            </div>
+		</div>
+	</form>
+	
+</div> <!-- END OF .TOP-WRAPPER -->

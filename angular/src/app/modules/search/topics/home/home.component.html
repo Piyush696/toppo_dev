@@ -1,0 +1,39 @@
+
+  <!-- KENDO TABSTRIP CLAIMED COMPONENT. -->
+<kendo-tabstrip *ngIf="homeTopic" class="center-sec mt-4 ml-1">
+	<kendo-tabstrip-tab [title]="'ABOUT ME'" [selected]="true">
+		<!-- ABOUT-US TEMPLATE -->
+	  <ng-template kendoTabContent>
+		<app-about-us [searchedTopic]="searchedTopic"></app-about-us>
+	  </ng-template>
+	</kendo-tabstrip-tab>
+	<kendo-tabstrip-tab [title]="'ABOUT THESE PAGES'">
+		<!-- ABOUT-THESE PAGES TEMPLATE-->
+		<ng-template kendoTabContent>
+       <app-about-these-pages></app-about-these-pages>
+		</ng-template>
+	</kendo-tabstrip-tab>
+	<kendo-tabstrip-tab [title]="'ABOUT THESE TOPICS'">
+		<!-- ABOUT THESE TOPICS TEMPLATE-->
+		<ng-template kendoTabContent>
+        <app-about-these-topics></app-about-these-topics>
+		</ng-template>
+	</kendo-tabstrip-tab>
+	<kendo-tabstrip-tab [title]="'RELATED TOPICS'">
+		<!-- RELATED-TOPICS TEMPLATE-->
+		<ng-template kendoTabContent>
+<app-related-topics></app-related-topics>
+		</ng-template>
+	</kendo-tabstrip-tab>
+	<kendo-tabstrip-tab [title]="'SYNONYMS'">
+		<!-- SYNONYMS TEMPLATE -->
+		<ng-template kendoTabContent>
+     <app-synonyms></app-synonyms>
+		</ng-template>
+	</kendo-tabstrip-tab>
+  </kendo-tabstrip>
+  
+  <!-- CLAIMED HOME -->
+  <div *ngIf="claimedhome" class="center-sec mt-4 ml-1" >
+     <app-claimed-home [searchedTopic]="searchedTopic"></app-claimed-home>
+  </div>

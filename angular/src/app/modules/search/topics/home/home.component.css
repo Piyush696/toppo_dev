@@ -1,0 +1,32 @@
+.content-card h2 {font-size: 2.5rem;word-break: normal;}
+
+/* MAIN PARA IN CARD */
+.content-card {background-color: #fff; width:100%; height:auto; margin: 0 auto; word-break: break-all;}
+
+/* IMAGE IN RIGHT IN CARD */
+.content-card img {width: 100%; height: auto;}
+
+/* MAIN TITLE IN CARD */
+.content-card p {font-style: normal; font-weight: 400; line-height: 25px; font-size: 16px; letter-spacing: -.291333px; color: #212529; mix-blend-mode: normal; opacity: .9;word-break: normal;}
+.content-card-start, .content-card-tab{width: 100% !important;}
+
+
+/* MEDIA QUERIRES CSS*/
+@media screen and (max-width: 768px)
+{
+.content-card{padding: 10px; margin: 0 !important;}
+.center-sec{margin: 30px auto;}
+}
+@media screen and (min-width: 992px) and (max-width: 768px)
+{
+  .content-card-start, .content-card-tab{width: 100% !important;}
+}
+@media screen and (max-width: 768px)
+{
+.home-row{margin-left: 0 !important; margin-right: 0 !important}
+.content-card {background-color: #fff; width: 100%; margin: 6.5em 0 0;padding: 10px;}
+.content-card h2{font-size: 2rem;text-align: left;}
+.content-card p{text-align: justify;margin-top: 30px;padding: 0 5px;}
+}
+
+

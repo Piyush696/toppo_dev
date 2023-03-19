@@ -1,0 +1,72 @@
+/*PADDING CLASS*/
+.comman-padding {padding: 0 0.938em;}
+
+/*SIDEBAR CSS*/
+.sidebar {background: linear-gradient(285.46deg, #50646E -36.85%, #717E83 -36.85%, #3D494E 100%);}
+.comman-padding {padding: 0 15px;}
+.no-padding {padding: 0px;}
+.user-login {padding: 10% 8% 5%; display: flex; margin: 0 auto;}
+.admin-img img {border-radius: 50px; float: right;}
+.user-login h4 {font-style: normal;font-weight: 600;line-height: 21px;font-size: 14px;letter-spacing: -0.245333px;color: #fff;margin-bottom: -5px;padding-top: 4px;}
+.user-login .position {font-style: normal;font-weight: normal;line-height: 21px;font-size: 12px;letter-spacing: -0.245333px;color: #FFFFFF;}
+.notification {height: 26px;width: 26px;text-align: center;background: #f85348;color: #fff;border-radius: 50px;position: relative;left: -22px;bottom: 5px;}
+.empty-space {height: 20px;}
+.switcher{margin-left: 7px; cursor: pointer;}
+.sidebar {min-height: 100vh;}
+.sidebar-offcanvas .nav {overflow: hidden;flex-wrap: nowrap;flex-direction: column;}
+.sidebar-offcanvas .nav-link {align-items: center;display: flex;padding: 5% 10%;white-space: nowrap;}
+.menu-title {padding-left: 10px;font-style: normal;font-weight: normal;line-height: normal;font-size: 15px;letter-spacing: -0.23px;color: #FFFFFF;}
+ul.nav li.nav-item:hover{background: #f8f8f8;}
+ul.nav li.nav-item:hover .svgicon path{fill: #50646E;}
+ul.nav li.nav-item:hover .menu-title{color: #50646E;}
+ul.nav li.active:hover{background: #f2f4f5 !important;}
+ul.nav li.nav-item {transition-timing-function:ease-in; transition-duration:0.4s;}
+.active {background: #f2f4f5;}
+.active .svgicon path{fill: #50646E !important;}
+.sidebar-offcanvas .active .menu-title {color:#50646E !important;}
+
+.logo-under-text {font-style: normal;font-weight: normal;line-height: normal;font-size: 12px;letter-spacing: -0.23px;color: #FFFFFF;opacity: 0.5;}
+.logo-text {text-align: center;}
+.empty-space1 {height: 150px;}
+.content-container{padding: 30px 15px 0;}
+.editor-pic{width: 40px; height: 40px; border-radius: 50%;}
+.pro{opacity: 0.5;}
+.proactive{color:#fff !important; opacity: 1 !important;}
+.admin-img{margin-right: 10px;}
+.rolebox{position: absolute; border:1px solid #ccc;}
+.rolebox ul{padding: 0; list-style: none; margin: 0;}
+.rolebox ul li{cursor: pointer; padding: 2px 8px; background: #e3e3e3;border-bottom: 1px dotted #ccc;}
+.rolebox ul li:last-child{border-bottom: none;}
+
+.nav-link .svgicon{width: 22px; height: 22px;}
+
+/*MEDIA QUERY*/
+@media (min-width: 1024px)
+{
+  .sidebar-container {width: 290px; max-width: 290px; position: absolute;}
+  .content-container{width: 100%; max-width: 100%; margin-left: 290px; flex: content;}
+}
+
+@media (min-width: 768px) and (max-width: 1023px)
+{
+  .sidebar-container {width: 200px; max-width: 200px; position: absolute;}
+  .content-container{width: 100%; max-width: 100%; margin-left: 200px; flex: content;}
+  .icon{width: 14px;}
+  .menu-title{font-size: 13px;}
+  .empty-space1{height: 50px;}
+  .user-login{padding: 40px 51px 25px;}
+  .logo-under-text{font-size: 10px;}
+}
+
+@media (min-width: 500px) and (max-width: 767px)
+{
+  .sidebar-container {width: 160px; max-width: 160px; position: absolute;}
+  .content-container{width: 100%; max-width: 100%; margin-left: 160px; flex: content;}
+  .icon{ display: none;}
+  .sidebar-offcanvas .nav-link{padding: 5%;}
+  .menu-title{font-size: 12px;}
+  .empty-space1{height: 30px;}
+  .user-login{padding: 40px 51px 25px;}
+  .logo-under-text{font-size: 10px;}
+}
+

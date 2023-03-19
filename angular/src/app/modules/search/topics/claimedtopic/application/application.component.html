@@ -1,0 +1,510 @@
+<!-- APPLICATION PAGE -->
+<div [ngStyle]="{'height': tabHeight}">
+  <div *ngIf="CustomTab">
+    <div class="row ml-3 mt-3">
+      <div class="col-7">
+        <div class="row back-color">
+          <div class="col-11">
+            <label class="main-heading pt-1">Indoor Plants</label>
+          </div>
+          <div class="col-1 p-0">
+            <label class="heading-number pt-2">30</label>
+          </div>
+        </div>
+        <div class="row left-content mt-5">
+          <div class="col-6 p-0 mb-3">
+            <div class="row bottom-border" [ngStyle]="{'height': UsHeight}">
+              <div class="align-center">
+                <div class="app-sec">
+                  <div class="row">
+                    <label>U.S Monthly Visitors<span>246,000</span></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row" [ngStyle]="{'height': UltimateHeight}">
+              <div class="align-center">
+                <div class="app-sec">
+                  <div class="row ml-4">
+                    <p class="pl-5">$150,060</p>
+                  </div>
+                  <div class="row ml-3">
+                    <label>Ultimate Monthly Base Value</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 p-0 left-border">
+            <div class="row ml-3 bottom-border" [ngStyle]="{'height': CostHeight}">
+              <div class="align-center">
+                <div class="app-sec">
+                  <div class="row ml-5 mt-2">
+                    <div class="col-6 p-0">
+                      <label class="mt-3 ml-3">Cost-Per-Click</label>
+                    </div>
+                    <div class="col-5 pt-1 pl-4">
+                      <p>.61</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row ml-3" [ngStyle]="{'height': MinHeight}">
+              <div class="align-center">
+                <div class="app-sec">
+                  <div class="row ml-5">
+                    <div class="col-6 p-0">
+                      <div class="row">
+                        <label class="mb-0">Minimum Expected</label>
+                      </div>
+                      <div class="row ml-3">
+                        <label>Monthly Value</label>
+                      </div>
+                    </div>
+                    <div class="col-5 pt-1 pl-2 p-0">
+                      <p>$300</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row ml-3 top-border1" [ngStyle]="{'height': MaxHeight}">
+              <div class="align-center">
+                <div class="app-sec">
+                  <div class="row ml-5">
+                    <div class="col-7 p-0">
+                      <div class="row">
+                        <label class="mb-0">Maximum Expected</label>
+                      </div>
+                      <div class="row ml-3">
+                        <label>Monthly Value</label>
+                      </div>
+                    </div>
+                    <div class="col-5 pt-1 p-0">
+                      <p>$1,105</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row top-border"></div>
+          <div class="row w-100 mt-3" [ngStyle]="{'height': BottomSecHeight}">
+            <div class="col-4">
+              <div class="align-center">
+                <div class="app-sec">
+                  <div class="row">
+                    <p class="mb-0 pl-3">12 months</p>
+                  </div>
+                  <div class="row">
+                    <label>Reservation period</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-2 left-border">
+              <div class="align-center">
+                <div class="app-sec">
+                  <div class="row ml-2">
+                    <p class="mb-0 pl-2">$30</p>
+                  </div>
+                  <div class="row ml-1">
+                    <label>Base Fee</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 left-border">
+              <div class="align-center">
+                <div class="app-sec">
+                  <div class="row ml-5 pl-4">
+                    <label>Valuation Range</label>
+                  </div>
+                  <div class="row">
+                    <div class="col-7">
+                      <div class="row ml-2">
+                        <p class="mb-0 pl-2">$4,962</p>
+                      </div>
+                      <div class="row ml-1">
+                        <label>If Min Attained</label>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="row">
+                        <p class="mb-0 pl-3">$19,367</p>
+                      </div>
+                      <div class="row">
+                        <label>If Max Attained</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-5 right-content">
+        <label>Desired level:</label>
+        <div class="row">
+          <div class="col-4">
+            <p>
+              <input type="radio" id="contibutor" name="radio-group" checked>
+              <label class="radioLabel" for="contibutor">Contributor</label>
+            </p>
+          </div>
+          <div class="col-5">
+            <p>
+              <input type="radio" id="Contributing" name="radio-group" checked>
+              <label class="radioLabel" for="Contributing">Contributing Editor</label>
+            </p>
+          </div>
+          <div class="col-3">
+            <p>
+              <input type="radio" id="Editor" name="radio-group" checked>
+              <label class="radioLabel" for="Editor">Editor</label>
+            </p>
+          </div>
+        </div>
+        <label class="mt-2">Media:</label>
+        <div class="row">
+          <p class="pl-3">If
+            you have any web asset, any business associated
+            with this Topic,
+            or any other professional, amateur, or media connection to or with this Topic,
+            please indicate all that apply:</p>
+        </div>
+        <div class="row mt-1">
+          <div class="col-3">
+            <p>
+              <input type="radio" id="test1" name="radio-group" checked>
+              <label class="radioLabel" for="test1">Podcast</label>
+            </p>
+          </div>
+          <div class="col-2 p-0">
+            <p>
+              <input type="radio" id="test2" name="radio-group" checked>
+              <label class="radioLabel" for="test2">Blog</label>
+            </p>
+          </div>
+          <div class="col-2">
+            <p>
+              <input type="radio" id="test3" name="radio-group" checked>
+              <label class="radioLabel" for="test3">Website</label>
+            </p>
+          </div>
+          <div class="col-5">
+            <p>
+              <input type="radio" id="test4" name="radio-group" checked>
+              <label class="radioLabel" for="test4">Business Expertise</label>
+            </p>
+          </div>
+        </div>
+        <div class="row mt-1">
+          <div class="col-5">
+            <p>
+              <input type="radio" id="Youtube" name="radio-group" checked>
+              <label class="radioLabel" for="Youtube">Youtube Video Channel</label>
+            </p>
+          </div>
+          <div class="col-4">
+            <p>
+              <input type="radio" id="Show" name="radio-group" checked>
+              <label class="radioLabel" for="Show">TV or Radio Show</label>
+            </p>
+          </div>
+          <div class="col-2">
+            <p>
+              <input type="radio" id="other" name="radio-group" checked>
+              <label class="radioLabel" for="other">Other</label>
+            </p>
+          </div>
+        </div>
+        <label class="mt-2">Expertise:</label>
+        <div class="row">
+          <p class="pl-3">Describe any special expertise in the Topic area, and,in general, tell us why you
+            are
+            the right person to be an Editor for this Topic,providing any relevant URLs,and including any marketing
+            plans
+            you might have, if any:</p>
+        </div>
+        <textarea class="w-100 mr-1 mt-2"
+          [ngStyle]="{'height': TextAreaHeight}">I am the editor of a blog devoted to indoor houseplants.I have extensive expertise in this area,and I would love to be the editor for this Topic!</textarea>
+        <div class="row">
+          <div class="col-6 p-0">
+            <label class="right-charctersleft pl-4">450 characters left</label>
+          </div>
+          <div class="col-6 mt-1">
+            <button class="btn button-send" type="submit">
+              <label class="label-send">SEND</label>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="CustomTab1">
+    <div class="row mt-3" [ngClass]="{'margin-tab': windowWidth > 1300 ,'margin-tabNone': windowWidth < 1300 }">
+      <kendo-tabstrip [ngStyle]="{'height': KendoTabHeight}">
+        <kendo-tabstrip-tab [title]="'Tab 1'" [selected]="true">
+          <ng-template kendoTabContent>
+            <div class="row back-color">
+              <div class="col-11">
+                <label class="main-heading pt-1">Indoor Plants</label>
+              </div>
+              <div class="col-1 p-0">
+                <label class="heading-number pt-2">30</label>
+              </div>
+            </div>
+            <div class="row mt-5"
+              [ngClass]="{'left-content':windowWidth > 1110 ,'left-contentTab': windowWidth < 1110}">
+              <div class="col-6 p-0 mb-3">
+                <div class="row bottom-border ml-2" [ngStyle]="{'height': UsHeight}">
+                  <div class="align-center">
+                    <div class="app-sec">
+                      <div class="row">
+                        <label>U.S Monthly Visitors<span>246,000</span></label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row" [ngStyle]="{'height': UltimateHeight}">
+                  <div class="align-center">
+                    <div class="app-sec">
+                      <div class="row ml-2">
+                        <p class="ml-5">$150,060</p>
+                      </div>
+                      <div class="row ml-3">
+                        <label>Ultimate Monthly Base Value</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 p-0 left-border">
+                <div class="row ml-3 bottom-border" [ngStyle]="{'height': CostHeight}">
+                  <div class="align-center">
+                    <div class="app-sec">
+                      <div class="row ml-5 mt-2">
+                        <div class="col-6 p-0">
+                          <label class="mt-3 ml-3">Cost-Per-Click</label>
+                        </div>
+                        <div class="col-5 pt-1 pl-4">
+                          <p>.61</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row ml-3" [ngStyle]="{'height': MinHeight}">
+                  <div class="align-center">
+                    <div class="app-sec">
+                      <div class="row ml-5">
+                        <div class="col-6 p-0">
+                          <div class="row">
+                            <label class="mb-0">Minimum Expected</label>
+                          </div>
+                          <div class="row ml-3">
+                            <label>Monthly Value</label>
+                          </div>
+                        </div>
+                        <div class="col-5 pt-1 pl-2 p-0">
+                          <p>$300</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row ml-3 top-border1" [ngStyle]="{'height': MaxHeight}">
+                  <div class="align-center">
+                    <div class="app-sec">
+                      <div class="row ml-5">
+                        <div class="col-7 p-0">
+                          <div class="row">
+                            <label class="mb-0">Maximum Expected</label>
+                          </div>
+                          <div class="row ml-3">
+                            <label>Monthly Value</label>
+                          </div>
+                        </div>
+                        <div class="col-5 pt-1 p-0">
+                          <p>$1,105</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row kendotop-border ml-2"></div>
+              <div class="row w-100 mt-3" [ngStyle]="{'height': BottomSecHeight}">
+                <div class="col-4">
+                  <div class="align-center">
+                    <div class="app-sec">
+                      <div class="row">
+                        <p class="mb-0 pl-3">12 months</p>
+                      </div>
+                      <div class="row">
+                        <label>Reservation period</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-2 left-border">
+                  <div class="align-center">
+                    <div class="app-sec">
+                      <div class="row ml-2">
+                        <p class="mb-0 pl-2">$30</p>
+                      </div>
+                      <div class="row ml-1">
+                        <label>Base Fee</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 left-border">
+                  <div class="align-center">
+                    <div class="app-sec">
+                      <div class="row ml-5 pl-4">
+                        <label>Valuation Range</label>
+                      </div>
+                      <div class="row">
+                        <div class="col-7">
+                          <div class="row ml-2">
+                            <p class="mb-0 pl-2">$4,962</p>
+                          </div>
+                          <div class="row ml-1">
+                            <label>If Min Attained</label>
+                          </div>
+                        </div>
+                        <div class="col-5">
+                          <div class="row">
+                            <p class="mb-0 pl-3">$19,367</p>
+                          </div>
+                          <div class="row">
+                            <label>If Max Attained</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </kendo-tabstrip-tab>
+        <kendo-tabstrip-tab [title]="'Tab 2'">
+          <ng-template kendoTabContent>
+            <div class="row ml-3"
+              [ngClass]="{'rightTab-content':windowWidth > 1121 , 'rightTab1-content':windowWidth < 1121}">
+              <div class="row w-100">
+                <label>Desired level:</label>
+              </div>
+              <div class="row w-100">
+                <div class="col-4 pl-0">
+                  <p>
+                    <input type="radio" id="contibutor" name="radio-group" checked>
+                    <label class="radioLabel" for="contibutor">Contributor</label>
+                  </p>
+                </div>
+                <div class="col-5">
+                  <p>
+                    <input type="radio" id="Contributing" name="radio-group" checked>
+                    <label class="radioLabel" for="Contributing">Contributing Editor</label>
+                  </p>
+                </div>
+                <div class="col-3">
+                  <p>
+                    <input type="radio" id="Editor" name="radio-group" checked>
+                    <label class="radioLabel" for="Editor">Editor</label>
+                  </p>
+                </div>
+              </div>
+              <div class="row w-100 mt-1">
+                <label>Media:</label>
+              </div>
+              <div class="row w-100">
+                <p [ngStyle]="{'font-size': PargraphFont}">If
+                  you have any web asset, any business associated
+                  with this Topic,
+                  or any other professional, amateur, or media connection to or with this Topic,
+                  please indicate all that apply:</p>
+              </div>
+              <div class="row w-100 mt-1">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 pl-0">
+                  <p>
+                    <input type="radio" id="test1" name="radio-group" checked>
+                    <label class="radioLabel" for="test1">Podcast</label>
+                  </p>
+                </div>
+                <div class="col-xl-3 col-lg-2 col-md-2 col-sm-2">
+                  <p>
+                    <input type="radio" id="test2" name="radio-group" checked>
+                    <label class="radioLabel" for="test2">Blog</label>
+                  </p>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+                  <p>
+                    <input type="radio" id="test3" name="radio-group" checked>
+                    <label class="radioLabel" for="test3">Website</label>
+                  </p>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4">
+                  <p>
+                    <input type="radio" id="test4" name="radio-group" checked>
+                    <label class="radioLabel" for="test4">Business Expertise</label>
+                  </p>
+                </div>
+              </div>
+              <div class="row w-100 mt-1">
+                <div class="col-xl-4 col-lg-5 col-md-5 col-sm-5 pl-0">
+                  <p>
+                    <input type="radio" id="Youtube" name="radio-group" checked>
+                    <label class="radioLabel" for="Youtube">Youtube Video Channel</label>
+                  </p>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+                  <p>
+                    <input type="radio" id="Show" name="radio-group" checked>
+                    <label class="radioLabel" for="Show">TV or Radio Show</label>
+                  </p>
+                </div>
+                <div class="col-xl-4 col-lg-3 col-md-3 col-sm-3">
+                  <p>
+                    <input type="radio" id="other" name="radio-group" checked>
+                    <label class="radioLabel" for="other">Other</label>
+                  </p>
+                </div>
+              </div>
+              <div class="row w-100 mt-1">
+                <label>Expertise:</label>
+              </div>
+              <div class="row w-100 mt-2">
+                <p [ngStyle]="{'font-size': PargraphFont}">Describe any special expertise in the Topic area, and,in general, tell us why you
+                  are
+                  the right person to be an Editor for this Topic,providing any relevant URLs,and including any
+                  marketing
+                  plans
+                  you might have, if any:</p>
+              </div>
+              <div class="row w-100 mt-2 mr-4">
+                <textarea class="w-100"
+                  [ngStyle]="{'height': TextAreaHeight}">I am the editor of a blog devoted to indoor houseplants.I have extensive expertise in this area,and I would love to be the editor for this Topic!</textarea>
+              </div>
+              <div class="row w-100 mt-1">
+                <div class="col-6 p-0">
+                  <label class="right-charctersleft pl-4">450 characters left</label>
+                </div>
+                <div class="col-6 mt-1">
+                  <button class="btn button-send p-0" type="submit">
+                    <label class="label-send">SEND</label>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </kendo-tabstrip-tab>
+      </kendo-tabstrip>
+    </div>
+  </div>
+</div>

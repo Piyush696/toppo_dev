@@ -1,0 +1,16 @@
+.top-wrapper {flex-direction: column; align-items: flex-end; width: 100%; height: 100vh; background-image: url('/assets/svg/topicopolis_bg.svg');background-size: cover;background-repeat: no-repeat;}
+.top-logo-container {max-width: 427px; width: 90%;position: relative;top: 45%;-webkit-transform: translateY(-50%);-ms-transform: translateY(-50%);transform: translateY(-50%);}
+
+/* OVERRIDING THE CHILD COMPONENT CSS */
+:host >>> .custom-search{width:auto !important; padding: 12px !important;}
+:host >>> .top-error-message {height: 76px !important;}
+:host >>> .searchbox-shadow{box-shadow: 0px 6px 20px #DFE4EA !important;border-radius: 30px;}
+:host >>> .top-search-input{font-size: 1em; line-height: 22px; color: #38474E; margin-top: 0px !important; display: block !important;height: 68px;position: relative;}
+:host >>>  #searchterm{width:calc(100vw - 35px) !important; height: 100% !important; color: #38474E !important;}
+
+
+/* BUILDING IMAGE AND ITS CONTAINER */
+.top-building-img-container {width:100%; display:flex; align-self: flex-end; flex-grow:1; align-content: center;}
+.top-building-img-container img {width:100%; opacity: 0.62;}
+
+

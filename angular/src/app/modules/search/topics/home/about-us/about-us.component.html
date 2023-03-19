@@ -1,0 +1,93 @@
+<!-- IF SEARCH TOPPIC IS UNKNOWN -->
+<div *ngIf="this.searchedTopic.status == 'UNK'" class="content-card">
+			<div class="row align-items-start">
+				<div class="col-lg-6 col-sm-6 col-xs-12 content-card-start">
+					<h2 [ngStyle]="{'font-size':headSize}">{{homeContent?.title}}</h2><br>
+					<p>{{homeContent?.body}}</p>
+				</div>
+				<div class="col-lg-6 col-sm-6 col-xs-12 content-card-tab">
+				  <div *ngIf ="showimg">
+					  <img src="assets/svg/hometab/mainsvg_unclaimed.png" style="height: 100% auto; width: 100%; padding: 10%;">
+				  </div>
+					<div *ngIf ="showimg1">
+					  <img src="{{path}}" [ngStyle]="{'height':imgHeight}">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- IF SEARCHED TOPIC IS TOPICOPOLIS TOPIC -->
+		<div *ngIf="this.searchedTopic.status == 'TOP'" class="content-card">
+			<div class="row align-items-start">
+		      <div class="col-lg-6 col-sm-6 col-xs-12 content-card-start">
+				  <h2 [ngStyle]="{'font-size':headSize}">{{topicopolisEditor}}</h2><br>
+				  <p>{{topicopolisStatus}}</p>
+			  </div>
+			  <div class="col-lg-6 col-sm-6 col-xs-12 content-card-tab">
+				  <div>
+					<img src="assets/img/top.PNG" style="height: 100% auto; width: 100%; padding: 10%;">
+				  </div>
+			  </div>
+			</div>
+		</div>
+
+		<!-- IF SEARCHED TOPIC IS TOPICOPOLIS RESERVED TOPIC  -->
+		<div *ngIf="this.searchedTopic.status == 'TSV'" class="content-card">
+			<div class="row align-items-start">
+		      <div class="col-lg-6 col-sm-6 col-xs-12 content-card-start">
+				  <h2 [ngStyle]="{'font-size':headSize}">{{tsvEditor}}</h2><br>
+				  <p>{{tsvStatus}}</p>
+			  </div>
+			  <div class="col-lg-6 col-sm-6 col-xs-12 content-card-tab">
+				  <div>
+					<img src="assets/img/top.PNG" style="height: 100% auto; width: 100%; padding: 10%;">
+				  </div>
+			  </div>
+			</div>
+		</div>
+
+		<!-- IF SEARCHED TOPIC IS LIV TOPIC  -->
+		<div *ngIf="this.searchedTopic.status == 'LIV'" class="content-card">
+			<div class="row align-items-start">
+		      <div class="col-lg-6 col-sm-6 col-xs-12 content-card-start">
+				  <h2 [ngStyle]="{'font-size':headSize}">{{livEditor}}</h2><br>
+				  <p>{{livStatus}}</p>
+			  </div>
+			  <div class="col-lg-6 col-sm-6 col-xs-12 content-card-tab">
+				  <div>
+					<img src="assets/img/liv.PNG" style="height: 100% auto; width: 100%; padding: 10%;">
+				  </div>
+			  </div>
+			</div>
+		</div>
+
+		<!-- IF SEARCHED TOPIC IS EXPIRED TOPIC  -->
+		<div *ngIf="this.searchedTopic.status == 'EXP'" class="content-card">
+			<div class="row align-items-start">
+		      <div class="col-lg-6 col-sm-6 col-xs-12 content-card-start">
+				  <h2 [ngStyle]="{'font-size':headSize}">{{expEditor}}</h2><br>
+				  <p>{{expStatus}}</p>
+			  </div>
+			  <div class="col-lg-6 col-sm-6 col-xs-12 content-card-tab">
+				  <div>
+					<img src="assets/img/exp.PNG" style="height: 100% auto; width: 100%; padding: 10%;">
+				  </div>
+			  </div>
+			</div>
+		</div>
+
+		<!-- IF SEARCHED TOPIC IS ABANDONED TOPIC  -->
+		<div *ngIf="this.searchedTopic.status == 'ABN'" class="content-card">
+			<div class="row align-items-start">
+		      <div class="col-lg-6 col-sm-6 col-xs-12 content-card-start">
+				  <h2 [ngStyle]="{'font-size':headSize}">{{abnEditor}}</h2><br>
+				  <p>{{abnStatus}}</p>
+			  </div>
+			  <div class="col-lg-6 col-sm-6 col-xs-12 content-card-tab">
+				  <div>
+					<img src="assets/img/abn.PNG" style="height: 100% auto; width: 100%; padding: 10%;">
+				  </div>
+			  </div>
+			</div>
+		</div>
+

@@ -1,0 +1,64 @@
+/* LOGO*/
+.top-logo-container {width: 20em; height: 100px;}
+.top-input-wrapper{margin-bottom: 0;}
+.fifty{width: 50%; float: left;}
+/* OVERRIDE BUTTONS DEFAULT BEHAVIOR */
+.btn {font-weight: 400; height: 30px; -moz-user-select: none; -webkit-user-select: none; user-select: none;}
+
+/* LOGIN FORM CONTAINER */
+.card-container {display: flex; flex-direction: column; background: #fff; box-shadow: 0px 6px 20px #DFE4EA;}
+.card {max-width: 450px; padding: 50px;  margin: 8% auto;  border: 0;}
+.card > div {/*width: 90%; display: flex;*/ flex-direction: column;}
+
+/* LINKS UNDER THE FORM */
+.login_links {padding: 0; max-width: 270px; display: flex; flex-direction: row; justify-content: space-between; border-top: 1px solid #37474f;}
+.login_links a {color: #37474f; font-size: 1.22rem;}
+.login_links a:hover, .login_links a:active, .login_links a:focus {color: #37474f;}
+.top-input-wrapper label{font-size: 35px; top: -5px;}
+.top-input-wrapper .top-form-control{padding: 10px 10px 20px 40px; border-bottom: 1px solid #ccc;font-size: 18px; line-height: 22px;}
+
+/* FORM AND FORM ELEMENTS */
+.form-group {margin-bottom: 0;}
+.form-group.row div {display: flex; flex-direction: column;}
+.btn.btn-signin {background-color: #768B95; color: #fff; padding: 0px; width: 70%; font-weight: 300; font-size: 1em; height: 44px; border: none; -o-transition: all 0.218s; -moz-transition: all 0.218s; -webkit-transition: all 0.218s; transition: all 0.218s; border-radius: 22px;}
+.btn.btn-signin:hover, .btn.btn-signin:active, .btn.btn-signin:focus {background-color: #667881; color:  #fff; opacity: 1;}
+.btn.btn-signin.change, .btn.btn-signin.forgot {width: 50%;}
+input[type=checkbox], input[type=radio] {vertical-align: -2px;}
+.checkbox_div {margin: 20px 0;}
+input#city {background-color: #eee;}
+input#state {background-color: #eee;}
+input#country {background-color: #eee;}
+
+.checkbox-min{margin-top: 12px;}
+.checkmark{width: 24px; height: 24px; top: -3px; background-color: #F2F4F5 !important; border:none;}
+.checkbox-min .checkmark::after{border: solid #667881; border-width: 0 2px 2px 0; width: 11px; height: 17px; left: 6px; top: 0; border-radius: 0 0 2px 0;}
+.checkbox-min input:checked ~ .checkmark{background-color: #F2F4F5 !important; border:none;}
+.text-right{text-align: right;}
+
+/* ERROR MESSAGES */
+.top-error-message  {width: 60%; padding-top: 0; padding-bottom: 2em; text-align: center;}
+.top-login-error {width: 100% !important; text-align: center; color: #37474f; font-size: 1.3rem;  padding: 0 1em; text-align: center;}
+.top-login-error > .k-notification {padding: 5px 2px; margin-top: 3px;}
+.alert-danger {background: none; border: none; color:#dc3545; padding: 0;}
+
+/* SIGNUP FORM CONTAINER */
+.jumbotron {margin: 0 auto; width: 50%; background: transparent; padding-top: 0;}
+.jumbotron p {font-size: 85%; color: #37474f; margin-top: 1rem; border: 0;}
+
+/* MASKED INPUT STYLE OVERRIDE */
+.k-maskedtextbox.top-form-control {padding: 0; border: 0;}
+.k-maskedtextbox input.top-form-control {border-radius: 0;  box-shadow: none; padding-top: 8px;}
+.k-maskedtextbox .k-widget.k-tooltip-validation .k-i-warning {display: inline-block; top: 10px;  right: 95%;}
+.k-maskedtextbox .k-widget.k-tooltip-validation {position: absolute;  left: 7px;   top: 40px; padding-left: 0.8rem;padding-top: 0.6rem;}
+
+h1{font-size: 34px; line-height: 46px; color: #38474E;}
+.top-form-control::placeholder {font-size: 18px; line-height: 22px;}
+.top-form-control::-ms-input-placeholder {font-size: 18px; line-height: 22px;}
+.top-form-control::-ms-input-placeholder {font-size: 18px; line-height: 22px;}
+.remembertext {font-style: normal; font-weight: normal; color: #545454;}
+
+/*MEDIA QUERY*/
+@media (min-width: 768px) and (max-width: 1023px) 
+{
+	.card {margin: 6% auto;}
+}

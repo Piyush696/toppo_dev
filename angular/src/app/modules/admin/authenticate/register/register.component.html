@@ -1,0 +1,158 @@
+<div class="top-wrapper">
+	<!-- MAIN LOGO -->
+	<div class="top-logo-container">
+		<img src="/assets/svg/topicopolis_logo_mainpage.svg" />
+	</div>
+	<div class="jumbotron">
+
+		<!-- ERROR NOTIFICATION IS DISPLAYED HERE -->
+		<div class="alert-danger" *ngIf="register_error">
+			<span *ngIf="register_error == 'account'"> {{error_messages['SIGNUP-ACCOUNT-ERROR']}}</span>
+			<span *ngIf="register_error == 'email'"> {{error_messages['SIGNUP-ERROR-USER-EXISTS']}}</span>
+		</div>
+
+		<div class="alert-info" *ngIf="register_success">
+			 {{error_messages['SIGNUP-SUCCESS']}} 
+			<a routerLink="/login" class="button"> Please Login</a>
+		</div>
+
+		<form [formGroup]="registerForm"  class="form-signin" (ngSubmit)="OnSubmit()" >
+		   
+			<div class="form-group row">
+				<div class="col-md-6 paddL0 top-input-wrapper">
+					<input tabindex="1" type="text" class="top-form-control" formControlName="first_name" [ngClass]="{ 'k-invalid':f.first_name.touched && f.first_name.errors, 'has-value': f.first_name.value }" >
+					<label for="first_name">First Name</label>
+					<div *ngIf="f.first_name.touched && f.first_name.errors">
+						<div class="alert-danger" *ngIf="f.first_name.errors.required">
+							{{error_messages['SIGNUP-FIRST-NAME-REQUIRED']}}
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 paddL0 top-input-wrapper">
+					<input tabindex="2" type="text" class="top-form-control" formControlName="last_name" [ngClass]="{ 'k-invalid':f.last_name.touched && f.last_name.errors, 'has-value': f.last_name.value }" >
+					<label for="last_name">Last Name</label>
+					<div *ngIf="f.last_name.touched && f.last_name.errors">
+						<div class="alert-danger" *ngIf="f.last_name.errors.required">
+							{{error_messages['SIGNUP-FIRST-NAME-REQUIRED']}}
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<div class="col-md-6 paddL0 top-input-wrapper">
+					<input tabindex="3" type="email" class="top-form-control" formControlName="email" [ngClass]="{ 'k-invalid':f.email.touched && f.email.errors, 'has-value': f.email.value }" >
+					<label for="email">Email Address</label>
+					<div *ngIf="f.email.touched && f.email.errors">
+						<div class="alert-danger" *ngIf="f.email.errors">
+							{{error_messages['SIGNUP-EMAIL-REQUIRED']}}
+						</div>
+					</div>					
+				</div>
+				<div class="col-md-6 paddL0 top-input-wrapper">
+					<input tabindex="4" type="text"  class="top-form-control" formControlName="skype" [ngClass]="{ 'has-value': f.skype.value }" >
+					<label for="skype">Skype ID</label>
+				</div>
+				
+			</div>
+
+			<div class="form-group row">
+				<div class="col-md-6 paddL0 top-input-wrapper">
+					<kendo-maskedtextbox tabindex="5" formControlName="phonemobile" class="top-form-control has-value" [mask]="mask" [maskValidation]="maskValidation"></kendo-maskedtextbox>
+
+					<label for="phonemobile">Mobile Phone</label>
+					<div *ngIf="f.phonemobile.touched && f.phonemobile.errors">
+						<div class="alert-danger" *ngIf="f.phonemobile.errors.required">
+							{{error_messages['SIGNUP-PHONE-REQUIRED']}}
+						</div>
+						<div class="alert-danger" *ngIf="f.phonemobile.errors.pattern">
+							{{error_messages['SIGNUP-PHONE-REQUIRED']}}
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 paddL0 top-input-wrapper">
+					<!-- <input tabindex="6" type="text" class="top-form-control" formControlName="phoneother" id="phoneother" [ngClass]="{ 'has-value': f.phoneother.value }"> -->
+					<kendo-maskedtextbox tabindex="6" formControlName="phoneother" class="top-form-control has-value" [mask]="mask" [maskValidation]="maskValidation"></kendo-maskedtextbox>
+					<label for="phoneother">Other Phone</label>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<div class="col-md-6 paddL0 top-input-wrapper">
+					<input tabindex="7" type="text" class="top-form-control" formControlName="address1" id="address1" [ngClass]="{ 'has-value': f.address1.value }">
+					<label for="address1">Address 1</label>
+				</div>
+				<div class="col-md-6 paddL0 top-input-wrapper">
+					<input tabindex="8" type="text" class="top-form-control" formControlName="address2" id="address2" [ngClass]="{ 'has-value': f.address2.value }">
+					<label for="address2">Address 2</label>
+				</div>
+			</div>
+			
+			<div class="form-group row">
+				<div class="col-md-3 paddL0 top-input-wrapper">
+					<input tabindex="9" type="text" pattern="\d{5}" class="top-form-control" formControlName="zip"  [ngClass]="{ 'has-value': f.zip.value }">
+					<label for="zip">Zipcode</label>
+					<div *ngIf="f.zip.touched && f.zip.errors">
+						<div class="alert-danger" *ngIf="f.zip.errors.required">
+							{{error_messages['SIGNUP-ZIP-ERROR']}}
+						</div>
+						<div class="alert-danger" *ngIf="f.zip.errors.pattern">
+							{{error_messages['SIGNUP-ZIP-ERROR']}}
+						</div>
+						<div class="alert-danger" *ngIf="f.zip.errors.validzip">
+							{{error_messages['SIGNUP-ZIP-INVALID']}}
+			            </div>
+					</div>
+				</div>
+				<div class="col-md-3 paddL0 top-input-wrapper">
+					<input type="text" class="top-form-control" formControlName="city" readonly  [ngClass]="{ 'has-value': zipValidator.zipdata}" [value]="zipValidator.zipdata? zipValidator.zipdata.city: ''">
+					<label for="city">City</label>
+				</div>
+				<div class="col-md-3 paddL0 top-input-wrapper">
+					<input type="text" class="top-form-control" formControlName="state"  readonly [ngClass]="{ 'has-value': zipValidator.zipdata}" [value]="zipValidator.zipdata? zipValidator.zipdata.state: ''">
+					<label for="state">State</label>
+				</div>
+				<div class="col-md-3 paddL0 top-input-wrapper">
+					<input type="text" class="top-form-control" formControlName="country" readonly [ngClass]="{ 'has-value': zipValidator.zipdata}" [value]="zipValidator.zipdata? zipValidator.zipdata.country: ''" >
+					<label for="country">Country</label>
+				</div>
+			</div>
+		   
+			<div class="form-group row">
+				<div class="col-md-6  paddL0 top-input-wrapper">
+					<input tabindex="10" type="password" class="top-form-control" formControlName="password"[ngClass]="{ 'k-invalid':f.password.touched && f.password.errors, 'has-value': f.password.value }">
+					<label for="password">Password</label>
+					<div *ngIf="f.password.touched && f.password.errors">
+						<div class="alert-danger" *ngIf="f.password.errors.required">
+							{{error_messages['SIGNUP-PASSWORD-REQUIRED']}}
+						</div>
+						<div class="alert-danger" *ngIf="f.password.errors.minlength">
+							{{error_messages['SIGNUP-PASSWORD-MIN-LENGTH']}}
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6  paddL0 top-input-wrapper">                                    
+					<input tabindex="11" type="password" class="top-form-control" formControlName="confirm_password" [ngClass]="{ 'k-invalid':f.confirm_password.touched && f.confirm_password.errors, 'has-value': f.confirm_password.value }">
+					<label for="confirm_password">Confirm Password</label>
+					<div *ngIf="f.confirm_password.touched && f.confirm_password.errors">
+						<div class="alert-danger" *ngIf="f.confirm_password.errors.required">
+							{{error_messages['SIGNUP-PASSWORD-REQUIRED']}}
+						</div>
+						<div class="alert-danger" *ngIf="f.confirm_password.hasError('invalid')">
+							{{error_messages['SIGNUP-PASSWORD-MATCH-FAIL']}}
+						</div>
+					</div>
+				</div>                
+			</div>
+			<div class="row">
+				<div class="col-md-offset-4 col-md-4 text-center"> 
+				    <button class="btn btn-signin" type="submit">Create Account</button> 
+				</div>
+			</div>
+
+		
+		</form>
+
+		<p>By clicking “Create an Account” you are agreeing to the terms and conditions | Privacy policy held by TOPICOPOLIS.</p>
+	</div>
+</div> <!-- END OF .TOP-WRAPPER -->

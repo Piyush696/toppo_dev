@@ -1,0 +1,13 @@
+.card {margin: 1rem auto; background-color: #eee;}
+.card-body{background-color: #fff;}
+h5 {margin: auto;}
+.inputrows {display: flex; flex-direction: row; justify-content: flex-start;}
+input.form-control {margin: 1rem 1rem 0 0rem; width: 10.5em;}
+input.form-control.wide {width: 100%;}
+pre {font-size: 0.8rem; line-height: 1}
+.fa-plus {font-size: 1rem; margin: 1rem;}
+.fa-minus {font-size: 1rem; margin: 1rem;}
+.form-control:focus {border: 1px solid blue;}
+.top_disp_flex {display: flex;align-items: baseline;justify-content: space-between;}
+a.btn { text-decoration: underline; }
+label {margin-right:1rem;}

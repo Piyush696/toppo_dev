@@ -1,0 +1,76 @@
+<div class="card">
+	<div class="card-body">
+			<h2>Phrase Generator</h2>
+
+			<form [formGroup]="sentenceForm" (ngSubmit)="OnSubmit($event)">
+				<div class="form-group top_disp_flex">
+					<input type="text" placeholder="Enter your phrase" class="form-control wide" formControlName="sentenceInput">
+					<button type="submit " class="btn btn-primary pull-right " [disabled]="!sentenceForm.valid ">Find Topic</button>
+				</div>
+			</form>
+			
+			<div *ngIf="!exact_match && searched && !topic_found">
+				<p> An exact match for the search phrase was not found. There were no topics found that has the given search terms </p>
+			</div>
+
+			<p *ngIf="exact_match && current_topics"> Found the exact topic matching your search. The topic id is {{current_topics[0].topic_id}}.</p>
+
+			<div *ngIf="topic_found && current_topics && !topic_chosen"> 
+				<p>No exact match was found. However, related topics were found. Please choose a topic to work with. </p>
+
+				<div *ngFor="let ctopics of current_topics">
+					<p> <a class="btn" (click)="chooseTopic($event, ctopics.topic_id)">{{ctopics.topic}}</a></p>
+				</div>
+			</div>
+
+			<div *ngIf="topic_chosen" class="card">
+				<p>Chosen topic: {{ chosen_topic.topic}}</p>
+				<p> Please use the following interface to build synonym groups for this topic </p>
+
+
+		  <form [formGroup]="phraseform" (submit)="saveForm($event)">
+				<i (click)="addSynonymGroup()" class="fa fa-plus" style="cursor: pointer "></i>
+				<div formArrayName="RowData">
+				      <div *ngFor="let row of phraseform.controls.RowData.controls; let i = index" [formGroupName]="i" >
+				        <fieldset>
+				          <label> Synonym Group {{i+1}} </label>
+				          <select *ngIf="i != 0" formControlName="rowOp" id="">
+				          	<option value="and">AND</option>
+				          	<option value="or">OR</option>
+				          	<option value="not">NOT</option>
+				          </select> 
+				        	<i (click)="addWord(row.controls.wordData)" class="fa fa-plus" style="cursor: pointer "></i>
+				        	<i (click)="removeWord(row, j)" class="fa fa-minus" style="cursor: pointer "></i>
+
+				          <div class ="inputrows" formArrayName="wordData">
+				            <div *ngFor="let word of row.controls.wordData.controls; let j = index" [formGroupName]="j">
+				            	<div class="form-group">
+									<input type="text" class="form-control" formControlName="word_inp">
+									<select *ngIf="j != 0" formControlName="wordOp" id="">
+							          	<option value="and">AND</option>
+							          	<option value="or">OR</option>
+							          	<option value="not">NOT</option>
+							        </select>
+								</div>
+				            </div>
+				          </div>
+
+				        </fieldset>
+				      </div>
+				    </div>
+				    <button type="submit" class="btn btn-primary" [disabled]="!phraseform.valid">Create Synonym Groups</button>
+			</form>
+
+			<br><br><br>
+
+				<div *ngIf="expression"> 
+					<p><strong>{{expression}}</strong></p>
+				</div>
+
+			<br><br><br>
+				<!-- <pre>{{phraseform.value | json}}</pre> -->
+				
+			</div>
+
+	</div>
+</div>

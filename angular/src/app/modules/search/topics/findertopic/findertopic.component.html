@@ -1,0 +1,11 @@
+<div class="tab-pane">
+	<kendo-tabstrip>
+		<kendo-tabstrip-tab *ngFor="let tab of childTab let i = index"
+		[title]="tab.tabname"
+		[selected]="i == selected">
+		<ng-template kendoTabContent>
+			<p>{{tab.tabname}}</p>
+		</ng-template>
+	</kendo-tabstrip-tab>
+</kendo-tabstrip>
+</div>

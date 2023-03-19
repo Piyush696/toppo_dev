@@ -1,0 +1,46 @@
+<div *ngIf="showBar">
+  <!-- SIDEBAR -->
+
+  <aside class="d-flex flex-column" [ngStyle]="{'height': sidebarHeight,'width':sidebarWidth}">
+      <!-- popup forclaimed topic -->
+      <div *ngIf="animateTop" class="top_panel1 sidebar">
+          
+              <h3 class="" style="margin-top: 6px; font-size: 19px; line-height: 120%; font-weight: bold; padding: 12px; color: #3C505C; letter-spacing: -0.214667px; text-align: center; align-items: center;">Claim this Topic</h3>
+            </div>
+
+    <!--EDITOR PANEL-->
+    <div [ngStyle]="{'height': streamingNowHeight}" class="top_panel sidebar-border" id="sidebar-item1">
+      <div class="mt-3">
+        <h6 class="head" [ngStyle]="{'font-size': headSize}">{{topicOwner}}</h6>
+        <i class="sub-head" [ngStyle]="{'font-size': headSize}">{{topicOwnerRole}}<br>{{topicOwnerRol}}</i>
+      </div>
+      <div class="ml-5 mt-3">
+        <a href="#" class="btn btn-primary btn-lg button-rounded mb-1" role="button" aria-disabled="true">
+          <h6 class="mt-1 ml-2" style="color: #F8FAFC; letter-spacing: -0.214667px; text-align: center; align-items: center; display: flex; line-height: 19px; font-size: 14px;">JOIN US</h6>
+        </a>
+      </div>
+    
+    </div>
+    <!--EDITOR PANEL-->
+    
+    <!--BG-->
+    
+    <div class="bg sidebar-border" id="sidebar-item2">
+      <h5 class="mt-2 event-color" [ngStyle]="{'font-size': headSize}">{{event}}</h5>
+      <h4 [ngStyle]="{'font-size': headSize}"><strong class="mt-1 bikes">{{bikes}}</strong></h4>
+      <h5 class="mt-1 event-color1" [ngStyle]="{'font-size': headSize}">{{event1}}</h5>
+      <div class="blue-line">
+      
+      </div>
+      <div *ngIf="showcontent">
+        <h6 class="mt-4">{{newBikes}}</h6>
+        <h6 class="mt-1 bikesInfo" [ngStyle]="{'font-size': fontSize}">{{bikesInfo}}</h6>
+      </div>
+    </div>
+  </aside>
+  <div class="row mt-6 ml-3">
+    <button kendoButton class="primary_btn" [ngStyle]="{'width': buttonWidth}"
+      style="position: fixed;width: 250px;bottom: 2%;height: 48px;">Create Your Own Event
+    </button>
+  </div>
+</div>

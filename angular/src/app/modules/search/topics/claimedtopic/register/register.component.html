@@ -1,0 +1,36 @@
+<div class="cont-center">
+    <div class="register-sec">
+        <div class="row">
+            <div class="col-6">
+                <input class="input-boxes w-100" type="text" id="FirstName" name="FirstName" placeholder="First name" />
+                <div class="input-border w-100 mt-2"></div>
+            </div>
+            <div class="col-6">
+                <input class="input-boxes w-100" type="text" id="FirstName" name="FirstName" placeholder="Last name" />
+                <div class="input-border w-100 mt-2"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 mt-4">
+                <input class="input-boxes w-100" type="text" id="Nickname" name="Nickname" placeholder="Nickname" />
+                <div class="input-border w-100 mt-2"></div>
+            </div>
+            <div class="col-6 mt-4">
+                <input class="input-boxes w-100" type="text" id="Nickname" name="Nickname" placeholder="Email Address" />
+                <div class="input-border w-100 mt-2"></div>
+            </div>
+        </div>
+        <div class="row mt-4" *ngIf="!isReset">
+            <div class="col-5">
+                <button type="submit" name="submit" class="btn button-create w-100">
+                    <label class="button-lab">CREATE</label></button>
+            </div>
+        </div>
+        <div class="row mt-4" *ngIf="isReset">
+            <div class="col-5">
+                <button type="reset" name="reset" class="btn button-create w-100">
+                    <label class="button-lab">RESET</label></button>
+            </div>
+        </div>
+    </div>
+</div>

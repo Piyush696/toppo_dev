@@ -1,0 +1,35 @@
+<div class="content-center">
+    <div class="login-sec">
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12" [ngClass]="{
+            'col-8': windowWidth > 1030,
+            'col-12':windowWidth < 1030
+          }">
+                <input class="input-boxe w-100" type="text" id="search" name="search" placeholder="E-mail" />
+                <div class="input-border mt-2"></div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-xl-12 col-lg-12 col-md-12" [ngClass]="{
+                'col-8': windowWidth > 1030,
+                'col-12':windowWidth < 1030
+              }">
+                <input class="input-boxe w-100" type="password" id="password" name="password" placeholder="Password" />
+                <div class="input-border mt-2"></div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 check mt-2">
+                <input type="checkbox" id="taskmanager-showcompleted-cb" class="k-checkbox" />
+                <label for="taskmanager-showcompleted-cb" class="k-checkbox-label mt-2 pr-2">
+                    <div class="checkbox-label-tm">Remember me</div>
+                </label>
+            </div>
+            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5">
+                <button class="btn button-sigin w-100" type="submit" (click)="onLogIn()">
+                    <label class="button-label">SIGN IN</label>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

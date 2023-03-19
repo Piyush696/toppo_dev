@@ -1,0 +1,20 @@
+.content-center{display: flex !important;justify-content: center;width:100%;height:100%;}
+.login-sec{background:#FFFFFF!important;border-radius:3px!important; width: 100%;align-self: center;padding:0 25% 0 25%;}
+input#search {background-image: url(src/assets/svg/email.svg);background-repeat: no-repeat;text-indent: 35px;color: #38474E;}  
+input#password {background-image: url(src/assets/svg/password.svg);background-repeat: no-repeat;text-indent: 35px;color: #38474E;}  
+.check .k-checkbox {background: #F2F4F5!important;border-radius: 3px!important;height: 24px!important;color: #559EE2!important}
+.btn-primary{background: #559EE2!important;box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.07)!important;border-radius: 80px!important;width: 127px;height: 48px;}
+.check .checkbox-label {margin-top: 2px!important; margin-left: 3px!important; font-size: 16px!important;}
+.check .checkbox-label-tm {margin-left: 3px!important; font-size: 14px!important;}
+.check .k-checkbox, .k-radio {margin: 0; padding: 0; clip: rect(0, 0, 0, 0); overflow: hidden; position: absolute; opacity: 0; -webkit-appearance: none; pointer-events: none;}
+.check .k-checkbox-label, .k-radio-label {margin: 0; padding-left: calc(16px + 0.5rem)!important; min-height: 16px!important; line-height: 17px!important; vertical-align: text-top!important; display: inline-flex!important; align-items: flex-start!important; position: relative!important; cursor: pointer!important;}
+.k-content .k-state-active{box-shadow: 0px 6px 20px rgba(19, 26, 31, 0.05)!important;}
+.k-item .k-state-active {background: #FFFFFF!important;box-shadow: 0px 6px 20px rgba(47, 66, 81, 0.05)!important;}
+.input-boxe{width:100%!important; border: 1px solid #E1E4E5;  border-top: white; border-left-color: white!important; border-right: white; border-bottom: #38474E!important;}
+.input-border{border: 1px solid #E1E4E5;}
+::-webkit-input-placeholder {font-size:20px;}
+::-moz-placeholder {font-size:20px;}
+:-ms-input-placeholder {font-size:20px;}
+:-moz-placeholder {font-size:20px;}
+.button-label{margin-top:10px; color: #FAFAFA; line-height: 19px; font-size: 14px; font-weight: normal;}
+.button-sigin{background: #559EE2!important;box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.07)!important;border-radius: 80px!important;}

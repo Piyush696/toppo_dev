@@ -1,0 +1,162 @@
+<div class="row admin_profile mb20">
+  <div class="col-sm-12">
+    <div class="admin_profile_info manage-bg">  
+        <form class="form-signin" [formGroup]="addTopicForm">
+          <div class="form-container">  
+          <div class="row mb10">
+            <div class="col-md-12">
+              <div class="notification-container">
+                <div class="alert-success" *ngIf="dispaly_success_message!=''">
+                  {{dispaly_success_message}} 
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mb20">
+            <div class="col-md-1"><label>Topic</label></div>
+            <div class="col-md-3">
+              <input kendoTextBox formControlName="newtopic" /> 
+              <div *ngIf="addClicked && f.newtopic.errors">
+                <div class="alert-danger" *ngIf="f.newtopic.errors.required">
+                  {{error_messages['TOPIC-NAME-REQUIRED']}}
+                </div>
+              </div>
+            </div>
+            <div class="col-md-1 gap"><label>Topic Type</label></div>
+            <div class="col-md-3">
+              <kendo-dropdownlist formControlName="newtopictype" [data]="formtopicTypes" [textField]="'text'" [valueField]="'val'"  valuePrimitive="true"></kendo-dropdownlist>
+              <div *ngIf="addClicked && f.newtopictype.errors">
+                <div class="alert-danger" *ngIf="f.newtopictype.errors.required">
+                  {{error_messages['TOPIC-TYPE-REQUIRED']}}
+                </div>
+              </div>
+            </div>
+            <div class="col-md-1"><label>Status</label></div>
+            <div class="col-md-3">
+              <kendo-dropdownlist formControlName="newtopicstatus" [data]="formtopicStatus" [textField]="'text'" [valueField]="'val'"  valuePrimitive="true"></kendo-dropdownlist>
+              <div *ngIf="addClicked && f.newtopicstatus.errors">
+                <div class="alert-danger" *ngIf="f.newtopicstatus.errors.required">
+                  {{error_messages['TOPIC-STATUS-REQUIRED']}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mb20">
+            <div class="col-md-1"><label>Category</label></div>
+            <div class="col-md-3">
+              <kendo-dropdownlist formControlName="newtopiccategory" [data]="formtopicCategories" [textField]="'text'" [valueField]="'val'"  valuePrimitive="true"></kendo-dropdownlist>
+
+              <div *ngIf="addClicked && f.newtopiccategory.errors">
+                <div class="alert-danger" *ngIf="f.newtopiccategory.errors.required">
+                  {{error_messages['TOPIC-CATEGORY-REQUIRED']}}
+                </div>
+              </div>
+            </div>
+            <div class="col-md-1 gap"><label>Sub Category</label></div>
+            <div class="col-md-3">
+              <kendo-dropdownlist formControlName="newtopicsubcategory" [data]="formtopicSubCategories" [textField]="'text'" [valueField]="'val'" valuePrimitive="true"></kendo-dropdownlist>
+              
+              <div *ngIf="addClicked && f.newtopicsubcategory.errors">
+                <div class="alert-danger" *ngIf="f.newtopicsubcategory.errors.required">
+                  {{error_messages['TOPIC-SUBCATEGORY-REQUIRED']}}
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <button kendoButton class="primary_btn" (click)="onSubmit()">Add</button>
+            </div>
+            <div class="col-md-2">
+               <button kendoButton class="primary_btn" [disabled]="resetDisabled" (click)="resetForm()">Clear</button>
+            </div>
+          </div>
+
+          </div>
+        </form>
+
+        <div class="row mb20">
+            <div class="col-md-12">
+              <div class="notification-container">
+                <div class="alert-success" *ngIf="grid_success_message!=''">
+                  {{grid_success_message}} 
+                </div>
+              </div>
+            </div>
+        </div> 
+
+        <form novalidate #myForm="ngForm" *ngIf="gridData">
+          <kendo-grid
+            [data]="gridData"
+            [pageSize]="pageSize" 
+            [skip]="state.skip" 
+            [sort]="state.sort"
+            [pageable]="true"
+            [sortable]="true"
+            [resizable]="true"
+            (dataStateChange)="dataStateChange($event)"
+            (edit)="editHandler($event)" (cancel)="cancelHandler($event)"
+            (save)="saveHandler($event)" (remove)="removeHandler($event)"
+            [navigable]="true"
+          >
+
+            <kendo-grid-column field="topic_id" title="Topic ID" width="100"></kendo-grid-column>
+
+            <kendo-grid-column field="topic" title="Topic">
+              <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+                  <input [(ngModel)]="dataItem.topic" kendoGridFocusable name="topic" class="k-textbox"/>
+              </ng-template>
+            </kendo-grid-column>
+
+            <kendo-grid-column field="topictype.text" title="Topic Type">
+              <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+                <kendo-dropdownlist [(ngModel)]="dataItem.topictype" [data]="gridtopicTypes" [textField]="'text'" [valueField]="'val'" name="topictype"></kendo-dropdownlist>
+              </ng-template>
+            </kendo-grid-column>
+
+            <kendo-grid-column field="status.text" title="Status">
+              <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+                <kendo-dropdownlist [(ngModel)]="dataItem.status" [data]="gridtopicStatus" [textField]="'text'" [valueField]="'val'" name="status"></kendo-dropdownlist>
+              </ng-template>
+            </kendo-grid-column>
+
+            <kendo-grid-column field="category" title="Category">
+              <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+                <kendo-dropdownlist [(ngModel)]="dataItem.category" [data]="gridtopicCategories" name="category" (valueChange)="handleCategoryChange($event)" [textField]="'text'" [valueField]="'val'" valuePrimitive="true"></kendo-dropdownlist>
+              </ng-template>
+            </kendo-grid-column>
+
+            <kendo-grid-column field="subcategory" title="Sub Category">
+              <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+                <kendo-dropdownlist [(ngModel)]="dataItem.subcategory" [data]="gridtopicSubCategories" name="subcategory" [textField]="'text'" [valueField]="'val'" valuePrimitive="true" [value]="defaultItem"></kendo-dropdownlist>
+              </ng-template>
+            </kendo-grid-column>
+
+            <kendo-grid-command-column title="Action" class="grid-editor">
+              <ng-template kendoGridCellTemplate let-isNew="isNew">
+                <button kendoGridEditCommand type="button" [primary]="true">Edit</button>
+                <button kendoGridRemoveCommand type="button">Remove</button>
+                <button kendoGridSaveCommand type="button" [disabled]="myForm.invalid || myForm.pristine">{{ isNew ? 'Add' : 'Update' }}</button>
+                <button kendoGridCancelCommand type="button">{{ isNew ? 'Discard changes' : 'Cancel' }}</button>
+              </ng-template>
+            </kendo-grid-command-column>
+
+            <ng-template kendoPagerTemplate let-totalPages="totalPages" let-currentPage="currentPage">
+              <kendo-pager-prev-buttons></kendo-pager-prev-buttons>
+              <kendo-pager-numeric-buttons [buttonCount]="10"></kendo-pager-numeric-buttons>
+              <kendo-pager-info></kendo-pager-info>
+              <kendo-pager-next-buttons></kendo-pager-next-buttons>
+              <kendo-dropdownlist [data]="pageSizes" [(value)]="pageSize" (valueChange)="changePager($event)"></kendo-dropdownlist>
+            </ng-template>
+
+          </kendo-grid>
+        </form>
+    </div>
+ </div>
+</div>
+
+<kendo-dialog title="{{error_messages['title_CREATE-TOPIC-DELETE-CONFIRM']}}" *ngIf="dialogOpened" (close)="action('no')" [minWidth]="250" [width]="450">
+  <p style="margin: 30px; text-align: center;">{{error_messages['CREATE-TOPIC-DELETE-CONFIRM']}}</p>
+  <kendo-dialog-actions class="dialogButtonContainer">
+  	<button kendoButton (click)="action('yes')" class="deleteConfirm" primary="true">Yes</button>
+    <button kendoButton (click)="action('no')">No</button>
+  </kendo-dialog-actions>
+</kendo-dialog>

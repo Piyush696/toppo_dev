@@ -1,0 +1,36 @@
+<!-- KENDO TABSTRIP CLAIMED COMPONENT. -->
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mt-3 login-tab">
+  <kendo-tabstrip
+    [ngClass]="{'login-tab center-sec':windowWidth > 1040,'login-tab center-pad':windowWidth > 1250,'login-tab center-pad1':windowWidth < 1250,'login-tab center-pad2':windowWidth < 1110,'login-tab center-pad3':windowWidth < 1040}"
+    [ngStyle]="{'height': tabHeight}">
+
+    <kendo-tabstrip-tab [title]="'LOGIN'" [selected]="true">
+      <ng-template kendoTabContent>
+
+        <app-login (applicationEvent)="onLoginComplete($event)"></app-login>
+
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab [title]="'CREATE ACCOUNT'">
+      <ng-template kendoTabContent>
+
+        <app-register [isReset]="!isReset"></app-register>
+
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab [title]="'RESET'">
+      <ng-template kendoTabContent>
+
+        <app-register [isReset]="isReset"></app-register>
+
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab [title]="'FORGOT INFO'">
+      <ng-template kendoTabContent>
+        <app-forgot></app-forgot>
+      </ng-template>
+    </kendo-tabstrip-tab>
+
+
+  </kendo-tabstrip>
+</div>

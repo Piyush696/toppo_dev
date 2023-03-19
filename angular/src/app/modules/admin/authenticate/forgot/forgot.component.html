@@ -1,0 +1,22 @@
+<div class="login-wrapper">
+	<!-- MAIN LOGO -->
+	<div class="top-logo-container">
+		<img src="/assets/svg/topicopolis_logo_mainpage.svg" />
+	</div>
+
+	<form  [formGroup]="forgot_form" id="forgot_password" class="form-signin">
+	   <div class="card card-container">
+    		<div id="top-notification-container" class="top-login-error"></div>
+
+			<div class="top-input-wrapper marT">
+	            <input type="email" formControlName="useremail" id="useremail" class="top-form-control" required/>
+	            <label for="useremail">Enter your email</label>
+	            <div *ngIf="f.useremail.errors" class="invalid-feedback">
+                  <div *ngIf="f.useremail.errors.required">Email is required</div>
+              </div>
+			</div>      
+	        <button class="btn btn-signin forgot" type="submit">Reset Password</button>
+	    </div>
+	</form>
+
+</div> <!-- END OF .TOP-WRAPPER -->

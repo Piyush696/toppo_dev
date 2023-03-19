@@ -1,0 +1,18 @@
+[
+    {"topics": "TOP","status":"TOP"},
+    {"topics": "TSV","status":"TSV"},
+    {"topics": "UNC","status":"UNC"},
+    {"topics": "RSV","status":"RSV"},
+    {"topics": "SUB","status":"SUB"},
+    {"topics": "REV","status":"REV"},
+    {"topics": "APP","status":"APP"},
+    {"topics": "CLM","status":"CLM"},
+    {"topics": "INP","status":"INP"},
+    {"topics": "DRP","status":"DRP"},
+    {"topics": "LIV","status":"LIV"},
+    {"topics": "EXP","status":"EXP"},
+    {"topics": "ABN","status":"ABN"},
+    {"topics": "REJ","status":"REJ"},
+    {"topics": "FRB","status":"FRB"},
+    {"topics": "UNK","status":"UNK"}  
+]
